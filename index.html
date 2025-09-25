@@ -1,214 +1,1026 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <title>ImmersaLab | Immersive & Realistic Visualization</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="ImmersaLab specializes in cinematic visualizations, XR experiences, and AI avatars." name="description"/>
-    <meta content="ImmersaLab" name="author"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glint3D: AI-First 3D Rendering Platform for Automation</title>
+    <meta name="description" content="Headless, scriptable rendering engine. Automate product visualization, synthetic data, and financial storytelling with deterministic CI/CD pipelines.">
+    <meta name="author" content="ImmersaLab">
+    <meta name="keywords" content="automation-first rendering, deterministic 3D, headless renderer, AI-native 3D platform, WebGPU rendering">
+    <meta property="og:title" content="Glint3D: AI-First 3D Rendering for Automation">
+    <meta property="og:description" content="Transform your 3D workflows with deterministic, scriptable rendering built for AI agents and automation pipelines.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Glint3DIcon.png">
+
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <!-- Stylesheets -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Bootstrap JavaScript & jQuery (Required for Dropdowns) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=4">
 
-    
-     <!-- Link to the External CSS File -->
-     <link rel="stylesheet" href="styles.css?v=2">
+    <style>
+        /* Hero logo styles */
+        .hero-logo {
+            height: 80px;
+            width: 80px;
+            margin-bottom: var(--spacing-lg);
+            object-fit: contain;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
+        /* Clean navbar layout */
+        .navbar .container-fluid {
+            justify-content: space-between !important;
+            padding: 0 var(--spacing-lg) !important;
+        }
+
+        /* Brand text styles */
+        .brand-text {
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-2xl);
+            transition: all 0.3s ease;
+            letter-spacing: 0.1em;
+            display: inline-block;
+            transform-origin: center;
+        }
+
+        .brand-text:hover,
+        .navbar-brand:hover .brand-text {
+            color: var(--primary-color);
+            letter-spacing: 0.2em;
+        }
+
+        /* Additional styles for AI-first positioning */
+        .code-block {
+            background: #1a1a1a;
+            color: #f8f8f2;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: var(--spacing-lg) 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .terminal-prompt {
+            color: #50fa7b;
+        }
+
+        .json-key {
+            color: #8be9fd;
+        }
+
+        .json-string {
+            color: #f1fa8c;
+        }
+
+        .json-number {
+            color: #bd93f9;
+        }
+
+        .trust-indicators {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-2xl);
+            margin: var(--spacing-3xl) 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-metric {
+            text-align: center;
+        }
+
+        .trust-metric .number {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .trust-metric .label {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+
+        .tech-strip {
+            background: linear-gradient(135deg, var(--secondary-color), #2a2a2a);
+            color: white;
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+
+        .tech-strip .tech-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-xl);
+            flex-wrap: wrap;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: var(--font-size-sm);
+        }
+
+        .tech-strip .tech-separator {
+            color: var(--primary-color);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .solution-preview {
+            background: var(--background-tertiary);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-2xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .solution-preview h4 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+
+        .solution-preview .code-snippet {
+            background: #1a1a1a;
+            color: #f8f8f2;
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            margin-top: var(--spacing-sm);
+        }
+
+        /* Interface Showcase Styles */
+        .interface-showcase {
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-heavy);
+            overflow: hidden;
+            max-width: 600px;
+            border: 1px solid var(--border-color);
+        }
+
+        .interface-tabs {
+            display: flex;
+            background: var(--background-tertiary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .interface-tab {
+            flex: 1;
+            padding: var(--spacing-md);
+            text-align: center;
+            cursor: pointer;
+            font-weight: var(--font-weight-medium);
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+            border-bottom: 2px solid transparent;
+        }
+
+        .interface-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            background: white;
+        }
+
+        .interface-content {
+            padding: var(--spacing-xl);
+            min-height: 300px;
+            display: none;
+        }
+
+        .interface-content.active {
+            display: block;
+        }
+
+        /* UI Mockup Styles */
+        .ui-mockup {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .ui-header {
+            background: #ffffff;
+            padding: var(--spacing-md);
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ui-title {
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+        }
+
+        .ui-controls {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .ui-btn {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            background: #f1f5f9;
+            color: var(--text-secondary);
+            border: 1px solid #e2e8f0;
+        }
+
+        .ui-btn-primary {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .ui-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1px;
+            background: #e2e8f0;
+        }
+
+        .ui-viewport {
+            background: #f8fafc;
+            padding: var(--spacing-lg);
+            position: relative;
+        }
+
+        .ui-scene {
+            background: #e2e8f0;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .ui-camera-controls {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+        }
+
+        .ui-control {
+            width: 32px;
+            height: 32px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .ui-sidebar {
+            background: white;
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+
+        .ui-panel {
+            padding: var(--spacing-sm);
+            background: #f8fafc;
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+
+        /* Automation Showcase Styles */
+        .automation-showcase {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .automation-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: var(--spacing-sm);
+            min-width: 120px;
+        }
+
+        .step-icon {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .step-text {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .automation-arrow {
+            font-size: var(--font-size-xl);
+            color: var(--primary-color);
+            font-weight: var(--font-weight-bold);
+        }
+
+        /* Workflow Steps */
+        .workflow-steps {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+
+        .workflow-steps span:not(:last-child)::after {
+            content: '';
+            margin-left: var(--spacing-sm);
+        }
+
+        @media (max-width: 768px) {
+            .trust-indicators {
+                gap: var(--spacing-lg);
+            }
+
+            .tech-strip .tech-items {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+
+            .ui-main {
+                grid-template-columns: 1fr;
+            }
+
+            .automation-showcase {
+                flex-direction: column;
+            }
+
+            .automation-arrow {
+                transform: rotate(90deg);
+            }
+
+            .workflow-steps {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
-<section class="intro-section">
-    <h1><span class="highlight-text">ImmersaLab</span>: Where 3D Vision Becomes Immersive Reality</h1>
-    <p>We are a <span class="highlight-text">Creative Lab</span> specializing in high-end visualization, XR experiences, cinematic content, and AI avatars. Using Unreal Engine's cutting-edge technology, we bring your 3D models and ideas to life with unmatched realism and interactivity.</p>
-    <p>From cinematic animations to fully immersive XR training, our expertise in VFX, physics, and AI integration ensures the most advanced digital experiences.</p>
-</section>
-
 <body>
-    <div class="video-section">
-        <div class="video-container" onclick="location.href='sections.html#ai-avatars'">
-            <video class="scroll-video" muted playsinline loop>
-                <source src="WebNarration.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay">AI AVATARS</div>
-        </div>
-    </div>
-    
-    <div class="video-section">
-        <div class="video-container" onclick="location.href='sections.html#cinematics'">
-            <video class="scroll-video" muted playsinline loop>
-                <source src="WebGolemsCurse.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay">CINEMATICS</div>
-        </div>
-    </div>
-    
-    <div class="video-section">
-        <div class="video-container" onclick="location.href='sections.html#xr-experiences'">
-            <video class="scroll-video" muted playsinline loop>
-                <source src="WebVRPreview.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay">XR EXPERIENCES</div>
-        </div>
-    </div>
-    
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid d-flex justify-content-between align-items-center">
-                <!-- Menu Button -->
-                <div class="dropdown">
-                    <button class="menu-btn btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.html">Home</a></li>
-                        <li><a class="dropdown-item" href="sections.html">Sections</a></li>
-                        <li><a class="dropdown-item" href="#contact" onclick="scrollToContact()">Contact</a></li>
+    <!-- Modern Header -->
+    <header class="modern-header">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container-fluid">
+                <!-- Brand -->
+                <a class="navbar-brand" href="index.html" aria-label="ImmersaLab Home">
+                    <span class="brand-text">IMMERSALAB</span>
+                </a>
+
+                <!-- Navigation Toggle -->
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+                    <span class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav-menu" id="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="product.html" class="nav-link">Product</a></li>
+                        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                        <li><a href="download.html" class="nav-link">Download</a></li>
+                        <li><a href="resources.html" class="nav-link">Resources</a></li>
+                        <li><a href="company.html" class="nav-link">Company</a></li>
                     </ul>
-                </div>
-    
-                <!-- Centered Title -->
-                <a class="navbar-brand mx-auto" href="index.html">ImmersaLab</a>
-    
-                <!-- Right-Aligned Announcement (Now Highlighted in Blue) -->
-                <div class="navbar-announcement">
-                    🚀 <strong>Three Free Projects This Month!</strong> <a href="#offer-details">Learn More</a>
+                    <div class="nav-cta">
+                        <a href="download.html" class="btn btn-primary btn-sm">
+                            <i class="fas fa-download"></i> Get Glint3D
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-    
-    
-    <section class="info-section">
-        <div class="container">
-            <div class="row g-5">
-                <!-- Why Choose ImmersaLab -->
-                <div class="col-md-5 why-choose-section animate">
-                    <h2>Why Choose <span class="immersalab-text">ImmersaLab</span>?</h2>
-                    <ul>
-                        <li><i class="fas fa-check"></i> <strong>Photorealistic & Visually Stunning</strong> – Unreal Engine’s most advanced lighting, physics, and effects.</li>
-                        <li><i class="fas fa-check"></i> <strong>Customizable & Adaptive</strong> – Tailored solutions for different industries and artistic needs.</li>
-                        <li><i class="fas fa-check"></i> <strong>Seamless Cinematic & Interactive XR</strong> – Unique integration of both mediums.</li>
-                        <li><i class="fas fa-check"></i> <strong>AI-Enhanced Experiences</strong> – Intelligent, interactive avatars elevate immersion.</li>
-                    </ul>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="highlight-text">3D visualization</span>
+                <span class="hero-subtitle">made simple, scalable, and AI-ready</span>
+            </h1>
+            <p class="hero-description">
+                <strong>Glint3D</strong> breaks down the barriers of traditional 3D software. No expensive licenses, no powerful hardware required, no steep learning curves. Upload a model → get stunning visuals instantly in your browser.
+            </p>
+            <div class="hero-cta">
+                <a href="download.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-download"></i> Download Glint3D
+                </a>
+                <a href="demo.html" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-play"></i> See Demo
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="interface-showcase">
+                <div class="interface-tabs">
+                    <div class="interface-tab active" data-tab="desktop">Browser Studio</div>
+                    <div class="interface-tab" data-tab="automation">Automation</div>
                 </div>
-    
-                <!-- Spacer Column for Centered Space -->
-                <div class="col-md-2"></div>
-    
-                <!-- How It Works -->
-                <div class="col-md-5 how-it-works-section animate">
-                    <h2>How It Works</h2>
-                    <ul>
-                        <li><i class="fas fa-cube"></i> <strong>Bring Your 3D Model or Concept</strong> – Clients provide their designs, CAD files, or ideas.</li>
-                        <li><i class="fas fa-tasks"></i> <strong>Choose Your Experience</strong> – Cinematic animation, interactive XR, standalone avatar or hybrid approach.</li>
-                        <li><i class="fas fa-magic"></i> <strong>We Transform It</strong> – We create a stunning, immersive digital experience using Unreal Engine 5 and other cutting-edge software.</li>
-                        <li><i class="fas fa-rocket"></i> <strong>Delivery & Implementation</strong> – The final product is delivered for marketing, training, or interactive engagement.</li>
-                    </ul>
+
+                <div class="interface-content active" id="desktop-content">
+                    <div class="ui-mockup">
+                        <div class="ui-header">
+                            <span class="ui-title">Glint3D Studio</span>
+                            <div class="ui-controls">
+                                <span class="ui-btn ui-btn-primary">Render</span>
+                                <span class="ui-btn">Export</span>
+                            </div>
+                        </div>
+                        <div class="ui-main">
+                            <div class="ui-viewport">
+                                <div class="ui-scene">3D Scene View</div>
+                                <div class="ui-camera-controls">
+                                    <span class="ui-control">◉</span>
+                                    <span class="ui-control">•</span>
+                                    <span class="ui-control">•</span>
+                                </div>
+                            </div>
+                            <div class="ui-sidebar">
+                                <div class="ui-panel">Materials</div>
+                                <div class="ui-panel">Lighting</div>
+                                <div class="ui-panel">Settings</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interface-content" id="automation-content">
+                    <div class="automation-showcase">
+                        <div class="automation-step">
+                            <span class="step-icon">1</span>
+                            <span class="step-text">Save project settings</span>
+                        </div>
+                        <div class="automation-arrow">→</div>
+                        <div class="automation-step">
+                            <span class="step-icon">2</span>
+                            <span class="step-text">Batch process 1000s</span>
+                        </div>
+                        <div class="automation-arrow">→</div>
+                        <div class="automation-step">
+                            <span class="step-icon">3</span>
+                            <span class="step-text">CI/CD integration</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Offer Details Section (White Background) -->
-<section id="offer-details" class="offer-section">
-    <div class="container">
-        <h2>🎉 Limited-Time Offer: Get a Free Project!</h2>
-        <p>To celebrate our launch, we are offering <strong>three free projects</strong> this month! Whether you need a <strong>cinematic visualization, an XR experience, or an AI avatar</strong>, this is your chance to collaborate with us at no cost.</p>
-        
-        <ul class="offer-list">
-            <li><i class="fas fa-bolt"></i> <strong>Only three spots available</strong><br>First come, first served!</li>
-            <li><i class="fas fa-paint-brush"></i> <strong>Tailored to your needs</strong><br>We bring your vision to life.</li>
-            <li><i class="fas fa-calendar-alt"></i> <strong>Offer valid this month only</strong><br>Don’t miss out!</li>
-        </ul>
+    <!-- Trust Indicators -->
+    <section class="trust-indicators">
+        <div class="trust-metric">
+            <span class="number">45k+</span>
+            <span class="label">Downloads</span>
+        </div>
+        <div class="trust-metric">
+            <span class="number">12.4k</span>
+            <span class="label">GitHub Stars</span>
+        </div>
+        <div class="trust-metric">
+            <span class="number">2.4k</span>
+            <span class="label">Discord Members</span>
+        </div>
+        <div class="trust-metric">
+            <span class="number">89</span>
+            <span class="label">Contributors</span>
+        </div>
+    </section>
 
-        <p>Interested? Contact us now</a> to secure your spot!</p>
-    </div>
-</section>
+    <!-- Why Glint3D Section -->
+    <section id="features" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The 3D Problem, Solved</h2>
+                <p class="section-subtitle">Traditional tools cost thousands, need powerful machines, and take weeks to master. Glint3D makes professional 3D accessible to everyone.</p>
+            </div>
 
-    
-        
-            <!-- Contact Section -->
-            <section id="contact" class="contact-section">
-                <div class="container">
-                    <h2>📩 Contact Us</h2>
-                    <p>Have questions or want to collaborate? Reach out to us!</p>
-                    <form action="https://formspree.io/f/xzzdvenl" method="POST">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+            <div class="services-grid">
+                <div class="service-feature animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Browser-Native & Accessible</h3>
+                    <p>No installs, no GPU requirements, no expensive licenses. Works on any device with a browser. Share results with a single link.</p>
+                    <div class="solution-preview">
+                        <h4>Workflow: Design → Save → Automate</h4>
+                        <div class="workflow-steps">
+                            <span>Browser UI</span> → <span>Share Link</span> → <span>Collaborate</span>
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                    </div>
                 </div>
-            </section>
-            
 
+                <div class="service-feature animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Built for Collaboration</h3>
+                    <p>Professors share links with entire classes. Teams review designs on Chromebooks. Clients see progress without software installs.</p>
+                    <div class="solution-preview">
+                        <h4>Perfect for Production Pipelines</h4>
+                        <div class="workflow-steps">
+                            <span>Design Tool</span> → <span>Export Config</span> → <span>Production Scale</span>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="service-feature animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Native Architecture</h3>
+                    <p>Built from the ground up for AI workflows. Agents can understand, manipulate, and control every aspect of rendering without human intervention.</p>
+                    <div class="solution-preview">
+                        <h4>Human + AI Collaboration</h4>
+                        <div class="workflow-steps">
+                            <span>Human Design</span> → <span>AI Scale</span> → <span>Infinite Variants</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-feature animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Future-Ready Graphics</h3>
+                    <p>Modern rendering pipeline: OpenGL/WebGL2 today, Vulkan/WebGPU next, with planned support for Gaussian splatting and NeRFs.</p>
+                    <div class="solution-preview">
+                        <h4>Desktop to Cloud</h4>
+                        <div class="workflow-steps">
+                            <span>Windows/Mac/Linux</span> → <span>Web Deploy</span> → <span>Cloud Scale</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-feature animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Platform, Not Just a Tool</h3>
+                    <p>Powers automated product visuals, synthetic datasets, financial dashboards, and more. One engine, endless applications.</p>
+                    <div class="solution-preview">
+                        <h4>Fits Your Workflow</h4>
+                        <div class="workflow-steps">
+                            <span>Creative Tools</span> → <span>Glint3D</span> → <span>Your Pipeline</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-feature animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Self-Improving Engine</h3>
+                    <p>Automatically detects issues, adjusts settings, and re-renders until quality targets are met. Continuously learns and improves.</p>
+                    <div class="solution-preview">
+                        <h4>Production Ready</h4>
+                        <div class="workflow-steps">
+                            <span>Test Locally</span> → <span>Validate</span> → <span>Deploy Safely</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Can Build Section -->
+    <section id="solutions" class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What You Can Build</h2>
+                <p class="section-subtitle">Three core applications where automation-first rendering transforms business outcomes</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Product Visualization Packs</h3>
+                        <p>Transform SKU catalogs overnight. Batch-render hero shots, 360° turntables, and color variants with consistent lighting and perfect framing.</p>
+                        <div class="code-block">
+<span class="json-key">{</span><br>
+&nbsp;&nbsp;<span class="json-key">"scene"</span>: <span class="json-string">"product_hero_shot"</span>,<br>
+&nbsp;&nbsp;<span class="json-key">"models"</span>: [<span class="json-string">"SKU_001.glb"</span>, <span class="json-string">"SKU_002.glb"</span>],<br>
+&nbsp;&nbsp;<span class="json-key">"variants"</span>: [<span class="json-string">"red"</span>, <span class="json-string">"blue"</span>, <span class="json-string">"black"</span>],<br>
+&nbsp;&nbsp;<span class="json-key">"outputs"</span>: [<span class="json-string">"hero"</span>, <span class="json-string">"turntable"</span>, <span class="json-string">"lifestyle"</span>]<br>
+<span class="json-key">}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Synthetic Data for AI/Robotics</h3>
+                        <p>Generate deterministic training datasets. Perfect labels, controlled domain randomization, and exact reproducibility for faster ML development.</p>
+                        <div class="code-block">
+<span class="terminal-prompt">$</span> python generate_dataset.py<br>
+<span style="color: #f8f8f2;">generator = DatasetGenerator(</span><br>
+&nbsp;&nbsp;<span style="color: #f8f8f2;">scene_template='warehouse.json',</span><br>
+&nbsp;&nbsp;<span style="color: #f8f8f2;">randomization_config=random_config</span><br>
+<span style="color: #f8f8f2;">)</span><br>
+<span style="color: #f8f8f2;">dataset = generator.generate(count=10000)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Financial Visualization & Storytelling</h3>
+                        <p>From CSV to cinematic. Programmatically generate animated portfolio drawdowns, risk scenarios, and branded report presentations.</p>
+                        <div class="code-block">
+<span class="terminal-prompt">$</span> glint3d render --data portfolio_2024.csv<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--template quarterly_report.json<br>
+<span style="color: #50fa7b;">✅ Generated animated portfolio report</span><br>
+<span style="color: #50fa7b;">Output: Q4_2024_Performance.mp4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Foundation Strip -->
+    <section class="tech-strip">
+        <div class="container">
+            <div class="tech-items">
+                <span>Headless CLI</span>
+                <span class="tech-separator">•</span>
+                <span>JSON-Ops Configuration</span>
+                <span class="tech-separator">•</span>
+                <span>Web + Desktop Builds</span>
+                <span class="tech-separator">•</span>
+                <span>OpenGL/WebGL2 → Vulkan/WebGPU</span>
+                <span class="tech-separator">•</span>
+                <span>CI/CD Integration Ready</span>
+                <span class="tech-separator">•</span>
+                <span>Open Source Core</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="offer-section animate-on-scroll">
+        <div class="container">
+            <div class="offer-content">
+                <div class="offer-header">
+                    <span class="offer-badge-large">Ready to Automate</span>
+                    <h2 class="offer-title">Start Building with Glint3D</h2>
+                    <p class="offer-description">
+                        Download the engine today and join thousands of developers automating their 3D pipelines.
+                        Free, open source, and ready for production use.
+                    </p>
+                </div>
+
+                <div class="offer-features">
+                    <div class="offer-feature">
+                        <div class="feature-icon-small">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Instant Access</h4>
+                            <p>Download for Windows, macOS, and Linux. Start rendering in minutes.</p>
+                        </div>
+                    </div>
+
+                    <div class="offer-feature">
+                        <div class="feature-icon-small">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Active Community</h4>
+                            <p>Join 2,400+ developers in Discord. Get help, share techniques, contribute code.</p>
+                        </div>
+                    </div>
+
+                    <div class="offer-feature">
+                        <div class="feature-icon-small">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Open Source</h4>
+                            <p>MIT licensed core with full source code access. Build, modify, and distribute freely.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-cta">
+                    <a href="download.html" class="btn btn-primary btn-lg pulse-animation">
+                        <i class="fas fa-download"></i> Download Glint3D Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ImmersaLab</h3>
+                    <p>Building Glint3D—the AI-first rendering platform that turns 3D into data</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/immersalab/glint3d" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://discord.gg/glint3d" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://twitter.com/immersalab" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="product.html">Glint3D Engine</a></li>
+                            <li><a href="download.html">Download</a></li>
+                            <li><a href="resources.html">Documentation</a></li>
+                            <li><a href="demo.html">Web Demo</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solutions.html#product-viz">Product Visualization</a></li>
+                            <li><a href="solutions.html#synthetic-data">Synthetic Data</a></li>
+                            <li><a href="solutions.html#financial-viz">Financial Storytelling</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="https://github.com/immersalab/glint3d">GitHub</a></li>
+                            <li><a href="https://discord.gg/glint3d">Discord</a></li>
+                            <li><a href="resources.html#contributing">Contributing</a></li>
+                            <li><a href="company.html#careers">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="company.html">About</a></li>
+                            <li><a href="company.html#careers">We're Hiring</a></li>
+                            <li><a href="mailto:hello@immersalab.com">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ImmersaLab. Open source rendering for everyone. Licensed under MIT.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script>
-    document.addEventListener('scroll', function() {
-        document.querySelectorAll('.scroll-video').forEach(video => {
-            const rect = video.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                video.play();
-            } else {
-                video.pause();
+        // Enhanced JavaScript for AI-first positioning
+        class ImmersaLabWebsite {
+            constructor() {
+                this.init();
             }
-        });
-    });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
+            init() {
+                this.setupIntersectionObserver();
+                this.setupNavigation();
+                this.setupCodeHighlighting();
+                this.setupInterfaceShowcase();
+                this.setupAnalytics();
+            }
+
+            setupIntersectionObserver() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+
+                            // Track section views for analytics
+                            const sectionId = entry.target.id || entry.target.className;
+                            this.trackEvent('section_view', { section: sectionId });
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.animate-on-scroll, .service-feature, .timeline-item, .offer-section').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            setupNavigation() {
+                const navToggle = document.querySelector('.nav-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+
+                if (navToggle) {
+                    navToggle.addEventListener('click', () => {
+                        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                        navToggle.setAttribute('aria-expanded', !isExpanded);
+                        navMenu.classList.toggle('active');
+                        document.body.classList.toggle('nav-open');
+                    });
                 }
-            });
-        }, { threshold: 0.3 });
 
-        document.querySelectorAll('.animate').forEach(el => observer.observe(el));
-    });
+                // Track CTA clicks
+                document.querySelectorAll('a[href="download.html"]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        this.trackEvent('cta_click', {
+                            type: 'download',
+                            location: e.target.closest('section')?.className || 'unknown'
+                        });
+                    });
+                });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.3 });
+                // Smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const target = document.querySelector(link.getAttribute('href'));
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        document.querySelectorAll('.animate, .contact-section').forEach(el => observer.observe(el));
-    });
+                            // Close mobile menu
+                            if (navMenu.classList.contains('active')) {
+                                navMenu.classList.remove('active');
+                                document.body.classList.remove('nav-open');
+                            }
+                        }
+                    });
+                });
+            }
 
-    function scrollToContact() {
-        const contactSection = document.getElementById("contact");
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: "smooth" });
+            setupCodeHighlighting() {
+                // Add copy functionality to code blocks
+                document.querySelectorAll('.code-block, .code-snippet').forEach(block => {
+                    const copyBtn = document.createElement('button');
+                    copyBtn.className = 'copy-btn';
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                    copyBtn.setAttribute('aria-label', 'Copy code');
+
+                    copyBtn.addEventListener('click', async () => {
+                        try {
+                            await navigator.clipboard.writeText(block.textContent);
+                            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                            setTimeout(() => {
+                                copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                            }, 2000);
+                        } catch (err) {
+                            console.log('Copy failed:', err);
+                        }
+                    });
+
+                    block.style.position = 'relative';
+                    block.appendChild(copyBtn);
+                });
+            }
+
+            setupInterfaceShowcase() {
+                // Handle tab switching in hero section
+                document.querySelectorAll('.interface-tab').forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const tabType = tab.dataset.tab;
+
+                        // Update active tab
+                        document.querySelectorAll('.interface-tab').forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+
+                        // Update active content
+                        document.querySelectorAll('.interface-content').forEach(content => {
+                            content.classList.remove('active');
+                        });
+                        document.getElementById(`${tabType}-content`).classList.add('active');
+
+                        // Track tab interactions
+                        this.trackEvent('interface_tab_click', { tab: tabType });
+                    });
+                });
+            }
+
+            setupAnalytics() {
+                // Track key metrics for the desktop+automation positioning
+                this.trackEvent('page_view', {
+                    page: 'home',
+                    positioning: 'desktop_plus_automation',
+                    timestamp: new Date().toISOString()
+                });
+
+                // Track scroll depth
+                let maxScrollDepth = 0;
+                window.addEventListener('scroll', () => {
+                    const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                    if (scrollDepth > maxScrollDepth) {
+                        maxScrollDepth = scrollDepth;
+                        if (maxScrollDepth % 25 === 0) { // Track at 25%, 50%, 75%, 100%
+                            this.trackEvent('scroll_depth', { depth: maxScrollDepth });
+                        }
+                    }
+                });
+            }
+
+            trackEvent(eventName, properties = {}) {
+                // Analytics implementation would go here
+                console.log('Analytics:', eventName, properties);
+
+                // Example: Send to analytics service
+                // analytics.track(eventName, properties);
+            }
         }
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ImmersaLabWebsite();
         });
-    }, { threshold: 0.3 });
 
-    // Ensure it watches the offer section as well
-    document.querySelectorAll('.animate, .offer-section').forEach(el => observer.observe(el));
-});
+        // Performance optimization
+        window.addEventListener('load', () => {
+            // Lazy load non-critical resources
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+            });
+        });
+    </script>
 
-</script>
+    <style>
+        /* Copy button styles */
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 5px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .copy-btn:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-social {
+            margin-top: var(--spacing-md);
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: var(--font-size-lg);
+            margin-right: var(--spacing-md);
+            transition: color var(--transition-fast);
+        }
+
+        .footer-social a:hover {
+            color: white;
+        }
+    </style>
 </body>
 </html>

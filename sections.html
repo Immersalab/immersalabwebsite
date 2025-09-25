@@ -1,508 +1,724 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <title>ImmersaLab - Sections</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3D Automation Solutions: Product Viz, Synthetic Data & Financial Visualization</title>
+    <meta name="description" content="Automate product visualization, generate synthetic training data, and create financial storytelling with Glint3D's deterministic rendering platform.">
+    <meta name="author" content="ImmersaLab">
+    <meta name="keywords" content="product visualization automation, synthetic data generation, financial visualization automation, 3D automation solutions">
 
-    <!-- Link to the External CSS File -->
-    <link rel="stylesheet" href="styles.css?v=2">
-    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=4">
+
     <style>
-        /* General Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
+        /* Solutions-specific styles */
+        .solutions-hero {
+            background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%);
+            padding: calc(80px + var(--spacing-4xl)) var(--spacing-md) var(--spacing-4xl);
+            text-align: center;
+        }
 
-/* Header */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
+        .solutions-hero h1 {
+            font-family: var(--font-display);
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-lg);
+        }
 
-/* Navbar Brand (Centered ImmersaLab Text) */
-.navbar-brand {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: color 0.3s ease, letter-spacing 0.3s ease;
-}
+        .solutions-hero p {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-/* Menu Button */
-.menu-btn {
-    font-size: 1.5rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
+        .solution-detail {
+            padding: var(--spacing-4xl) 0;
+            position: relative;
+        }
 
-/* Intro Section */
-.intro-section {
-    margin-top: 80px;
-    text-align: center;
-    padding: 100px 20px;
-    background: #f4f4f4;
-    animation: fadeIn 1.5s ease-in-out;
-}
+        .solution-detail:nth-child(even) {
+            background: var(--background-secondary);
+        }
 
-.intro-section h1, .why-choose-section h2, .how-it-works-section h2 {
-    font-size: 48px;  /* Increased font size */
-    margin-bottom: 20px;
-    font-weight: 600;
-    color: #333;
-}
+        .solution-detail-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
 
-.intro-section p {
-    font-size: 20px; /* Larger text size */
-    line-height: 1.6;
-    color: #666;
-    max-width: 900px; /* Increased max-width */
-    margin: auto;
-    opacity: 0;
-    animation: fadeSlideIn 1.5s ease-in-out forwards;
-}
+        .solution-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
 
-/* Highlighted Text */
-.highlight-text {
-    font-weight: bold;
-    color: #000;
-    transition: color 0.3s ease;
-}
+        .solution-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+        }
 
-/* Sections Layout */
-.info-section {
-    padding: 120px 20px;  /* Increased padding for more space */
-    background: #f4f4f4;
-}
+        .solution-icon i {
+            font-size: var(--font-size-3xl);
+            color: white;
+        }
 
-/* Why Choose & How It Works Sections */
-.why-choose-section, .how-it-works-section {
-    padding: 50px;  /* Increased padding */
-    background: #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    font-size: 1.1rem;  /* Slightly larger text */
-}
+        .solution-title {
+            font-family: var(--font-display);
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+        }
 
-/* Hover Animation */
-.why-choose-section:hover, .how-it-works-section:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
-}
+        .solution-description {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            line-height: var(--line-height-relaxed);
+            margin-bottom: var(--spacing-3xl);
+        }
 
-/* Spacer Between Boxes */
-.row.g-5 {
-    margin-bottom: 30px;  /* Adds spacing between rows */
-}
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-4xl);
+            margin-bottom: var(--spacing-4xl);
+        }
 
-/* Video Section */
-.video-section {
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .solution-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.video-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-lg) 0;
+        }
 
-/* Contact Section Styling */
-.contact-section {
-    background: #f9f9f9;
-    padding: 80px 20px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
+        .benefit-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
 
-.contact-section h2 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
+        .benefit-list li i {
+            color: var(--primary-color);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
 
-.contact-section p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 30px;
-}
+        .benefit-list strong {
+            font-weight: var(--font-weight-semibold);
+        }
 
-/* Contact Form Styling */
-.contact-section form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
+        .code-showcase {
+            background: #1a1a1a;
+            color: #f8f8f2;
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            border-left: 4px solid var(--primary-color);
+        }
 
-.contact-section .form-control {
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 1rem;
-}
+        .use-cases-section {
+            background: var(--background-tertiary);
+            padding: var(--spacing-3xl);
+            border-radius: var(--radius-xl);
+            margin-top: var(--spacing-3xl);
+        }
 
-.contact-section .btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 1.2rem;
-    border-radius: 8px;
-    background: #ccc;
-    color: #333;
-    border: none;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
+        .use-cases-section h3 {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
 
-.contact-section .btn:hover {
-    background: #007bff;
-    color: white;
-}
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
 
-/* Add space from the top without affecting the box size */
-#cinematic-visualization {
-    margin-top: 120px; /* Adjust this value for desired space */
-}
-/* Blue Box for AI Development */
-.ai-development-box {
-    background-color: #007bff; /* Blue background */
-    color: white; /* White text */
-    padding: 30px; /* Padding inside the box */
-    border-radius: 10px; /* Rounded corners */
-    margin-top: 40px; /* Adds space between sections */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
-}
+        .use-case-card {
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-normal);
+        }
 
-.ai-development-box h2 {
-    font-size: 1.8rem; /* Larger header size */
-    margin-bottom: 20px; /* Space below the heading */
-}
+        .use-case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-color);
+        }
 
-.ai-development-box p {
-    font-size: 1.2rem; /* Adjusted font size */
-    line-height: 1.6; /* Line height for readability */
-    margin-bottom: 10px; /* Adds spacing between paragraphs */
-}
+        .use-case-card h4 {
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
 
-/* Navbar Offer Styling - Subtle Grey Background */
-.navbar-announcement {
-    background-color: transparent;
-    color: black;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
+        .use-case-card h4 i {
+            color: var(--primary-color);
+        }
 
-/* Hover Effect: Blue Background with White Text */
-.navbar-announcement:hover {
-    background-color: #007bff; /* Turns blue on hover */
-    color: white;
-    cursor: pointer;
-}
+        .use-case-card p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: var(--line-height-relaxed);
+        }
 
-/* Navbar Offer Link Styling */
-.navbar-announcement a {
-    color: black; /* Default black text */
-    text-decoration: underline;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
+        .cta-section {
+            text-align: center;
+            margin-top: var(--spacing-4xl);
+            padding: var(--spacing-3xl);
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-light);
+        }
 
-/* Hover Effect for Link */
-.navbar-announcement:hover a {
-    color: white; /* Turns white on hover */
-}
+        .terminal-prompt { color: #50fa7b; }
+        .json-key { color: #8be9fd; }
+        .json-string { color: #f1fa8c; }
+        .json-number { color: #bd93f9; }
 
-/* Keyframe Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+        @media (max-width: 768px) {
+            .solutions-hero {
+                padding: calc(80px + var(--spacing-2xl)) var(--spacing-sm) var(--spacing-2xl);
+            }
 
-@keyframes fadeSlideIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-2xl);
+            }
 
-
-/* Ensure the button stays in the leftmost corner on all screens */
-@media (max-width: 768px) {
-    .menu-btn {
-        margin-left: 5px; /* Adjusts based on screen size */
-    }
-}
-        #ai-avatars { background: #f4f4f4; }
-        #cinematics { background: #e0e0e0; }
-        #xr-experiences { background: #d4d4d4; }
-        h1 { font-size: 3rem; }
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
+<body>
+    <!-- Modern Header -->
+    <header class="modern-header">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container-fluid">
+                <!-- Brand -->
+                <a class="navbar-brand" href="index.html" aria-label="ImmersaLab Home">
+                    <span class="brand-text">ImmersaLab</span>
+                </a>
 
-<!-- Bootstrap JavaScript & jQuery (Required for Dropdowns) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+                <!-- Navigation Toggle -->
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+                    <span class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
 
-
-<!-- Link to the External CSS File -->
-<link rel="stylesheet" href="styles.css">
-</head>
-<body> 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid d-flex justify-content-between align-items-center">
-                <!-- Menu Button -->
-                <div class="dropdown">
-                    <button class="menu-btn btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.html">Home</a></li>
-                        <li><a class="dropdown-item" href="sections.html">Sections</a></li>
-                        <li><a class="dropdown-item" href="#contact" onclick="scrollToContact()">Contact</a></li>
+                <!-- Navigation Menu -->
+                <div class="nav-menu" id="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="product.html" class="nav-link">Product</a></li>
+                        <li><a href="sections.html" class="nav-link">Solutions</a></li>
+                        <li><a href="download.html" class="nav-link">Download</a></li>
+                        <li><a href="resources.html" class="nav-link">Resources</a></li>
+                        <li><a href="company.html" class="nav-link">Company</a></li>
                     </ul>
-                </div>
-    
-                <!-- Centered Title -->
-                <a class="navbar-brand mx-auto" href="index.html">ImmersaLab</a>
-    
-                <!-- Right-Aligned Announcement (Now Highlighted in Blue) -->
-                <div class="navbar-announcement">
-                    🚀 <strong>Three Free Projects This Month!</strong> <a href="index.html#offer-details">Learn More</a>
+                    <div class="nav-cta">
+                        <a href="download.html" class="btn btn-primary btn-sm">
+                            <i class="fas fa-download"></i> Get Glint3D
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-    
-        
-        
-        
-        
-    
-        <main class="container my-5">
-            <!-- Cinematic Visualization -->
-            <section id="cinematic-visualization" class="section-box animate">
-                <h1>🎬 Cinematic Visualization</h1>
-        
-                <h3>Key Features:</h3>
-                <div class="feature-item">
-                    <i class="fas fa-check"></i> <strong>Pre-rendered, photorealistic animations using <strong>Unreal Engine 5</strong>.</strong>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-check"></i> <strong>Advanced lighting, VFX, and physics-based interactions for lifelike visuals.</strong>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-check"></i> <strong>Cinematic storytelling to showcase products, architecture, or complex processes </strong>
-                    <br></br>
-                </div>
-        
-                <h3>Use Cases:</h3>
-                <div class="use-case-item">
-                    <i class="fas fa-arrow-right"></i> <strong>Marketing & Product Showcases</strong> – Present new designs with cinematic flair.
-                </div>
-                <div class="use-case-item">
-                    <i class="fas fa-arrow-right"></i> <strong>Architectural & Real Estate Previews</strong> – Bring blueprints and CAD models to life.
-                </div>
-                <div class="use-case-item">
-                    <i class="fas fa-arrow-right"></i> <strong>Industrial & Engineering Visualizations</strong> – Demonstrate machinery, workflows, and automation.
-                </div>
-                <div class="use-case-item">
-                    <i class="fas fa-arrow-right"></i> <strong>Entertainment & Concept Development</strong> – High-quality pre-rendered sequences for film and game pitches.
-                </div>
-                <br></br>
-            </section>
-        
-            <!-- XR Training -->
-            <section id="xr-training" class="section-box animate">
-                <h1>🕶️ XR Training & Interactive Visualization</h1>
-        
-                <h3>Key Features:</h3>
-                <div class="feature-item">
-                    <i class="fas fa-check"></i> <strong>Full <strong>VR/AR compatibility</strong> – Custom-built simulations for training and visualization.</strong>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-check"></i> <strong>AI-driven, real-time interactivity – Smart environments that adapt to users.</strong>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-check"></i> <strong>Custom-tailored solutions for specific industries and training scenarios.</strong>
-                    <br></br>
-                </div>
-        
-                <h3>Use Cases:</h3>
-                <div class="use-case-item">
-                    <i class="fas fa-arrow-right"></i> <strong>Industrial Training</strong> – Hands-on simulations for operating heavy machinery or safety protocols.
-                </div>
-                <div class="use-case-item">
-                    <i class="fas fa-arrow-right"></i> <strong>Medical Training & Surgery Simulations</strong> – Interactive VR models for medical professionals.
-                </div>
-                <div class="use-case-item">
-                    <i class="fas fa-arrow-right"></i> <strong>Corporate Training & Soft Skills Development</strong> – Virtual environments for employee training.
-                </div>
-                <div class="use-case-item">
-                    <i class="fas fa-arrow-right"></i> <strong>Architectural & Design Walkthroughs</strong> – Interactive real estate previews with real-time changes.
-                </div>
-                <br></br>
-            </section>
-        
-            <!-- AI Avatars Section -->
-<section id="ai-avatars" class="section-box animate">
-    <h1>🤖 AI Avatars & Virtual Assistants</h1>
 
-    <h3>Key Features:</h3>
-    <div class="feature-item">
-        <i class="fas fa-check"></i> <strong>Scripted Narration</strong> – AI avatars explain products, processes, or designs based on pre-written scripts.
-    </div>
-    <div class="feature-item">
-        <i class="fas fa-check"></i> <strong>Realistic Facial Animation</strong> – AI-powered lip-syncing and expressive gestures.
-    </div>
-    <div class="feature-item">
-        <i class="fas fa-check"></i> <strong>High-Fidelity Visuals</strong> – Utilizing Unreal Engine’s Metahuman technology for lifelike avatars.
-    </div>
-    <div class="feature-item">
-        <i class="fas fa-check"></i> <strong>Immersive XR Compatibility</strong> – AI avatars can function as interactive guides in VR/AR environments.
-    </div>
-    <br></br>
+    <!-- Hero Section -->
+    <section class="solutions-hero">
+        <h1>Solutions Built on Glint3D</h1>
+        <p>Three core applications where automation-first rendering transforms business outcomes</p>
+    </section>
 
-
-    <h3>Use Cases:</h3>
-    <div class="use-case-item">
-        <i class="fas fa-arrow-right"></i> <strong>Product Demonstrations & Explainers</strong> – AI avatars narrate product features with engaging visual storytelling.
-    </div>
-    <div class="use-case-item">
-        <i class="fas fa-arrow-right"></i> <strong>Virtual Guides for XR Experiences</strong> – AI-driven characters assisting users in AR/VR applications.
-    </div>
-    <div class="use-case-item">
-        <i class="fas fa-arrow-right"></i> <strong>Corporate & Brand Ambassadors</strong> – AI avatars acting as digital brand representatives.
-    </div>
-    <div class="use-case-item">
-        <i class="fas fa-arrow-right"></i> <strong>Interactive Museum & Exhibition Guides</strong> – Providing historical or educational context in XR environments.
-    </div>
-
-    <!-- Blue Box for AI Development -->
-    <div class="ai-development-box">
-        <h2>🚀 AI-Powered Avatars in Development</h2>
-        <p>While we currently focus on pre-recorded narration and scripted animation, we are actively developing real-time AI-driven avatars capable of adaptive conversations and intelligent interaction within immersive environments.</p>
-        <p>These future AI avatars will enhance training, virtual assistants, and interactive storytelling with dynamic, responsive behavior.</p>
-    </div>
-</section>
-
-        
-            <!-- Hybrid Cinematic & XR -->
-            <section id="hybrid-experiences" class="section-box animate">
-                <h1>🌐 Hybrid Cinematic & XR Experiences</h1>
-        
-                <h3>Key Features:</h3>
-                <div class="feature-item">
-                    <i class="fas fa-check"></i> A perfect blend of cinematic storytelling and interactive XR.
+    <!-- E-commerce Product Visualization -->
+    <section id="product-viz" class="solution-detail">
+        <div class="solution-detail-content">
+            <div class="solution-header animate-on-scroll">
+                <div class="solution-icon">
+                    <i class="fas fa-shopping-cart"></i>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-check"></i> AI-driven adaptive narratives that evolve based on user interactions.
+                <h2 class="solution-title">E-commerce Product Visualization</h2>
+                <p class="solution-description">
+                    <strong>Turn SKUs into sales, overnight.</strong> Transform product catalogs without photo shoots. Glint3D's batch processing generates hero shots, 360° turntables, and color variants with perfect consistency—all from 3D models and JSON configurations.
+                </p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-content animate-on-scroll">
+                    <h3>Key Benefits</h3>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-clock"></i> <strong>Overnight Turnaround:</strong> Batch-process thousands of SKUs while you sleep</li>
+                        <li><i class="fas fa-balance-scale"></i> <strong>Perfect Consistency:</strong> Identical lighting, angles, and framing across all variants</li>
+                        <li><i class="fas fa-dollar-sign"></i> <strong>Cost Reduction:</strong> 10x cheaper than traditional photography workflows</li>
+                        <li><i class="fas fa-sync-alt"></i> <strong>Update Flexibility:</strong> New colors, materials, or angles without reshoots</li>
+                    </ul>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-check"></i> Engaging, photorealistic worlds that feel alive.
+
+                <div class="code-showcase animate-on-scroll">
+<span class="terminal-prompt">$</span> glint3d batch --config product_config.json<br><br>
+<span class="json-key">{</span><br>
+&nbsp;&nbsp;<span class="json-key">"scene"</span>: <span class="json-string">"product_hero_shot"</span>,<br>
+&nbsp;&nbsp;<span class="json-key">"models"</span>: [<span class="json-string">"SKU_001.glb"</span>, <span class="json-string">"SKU_002.glb"</span>],<br>
+&nbsp;&nbsp;<span class="json-key">"variants"</span>: [<span class="json-string">"red"</span>, <span class="json-string">"blue"</span>, <span class="json-string">"black"</span>],<br>
+&nbsp;&nbsp;<span class="json-key">"outputs"</span>: [<span class="json-string">"hero"</span>, <span class="json-string">"turntable"</span>, <span class="json-string">"lifestyle"</span>]<br>
+<span class="json-key">}</span><br><br>
+<span style="color: #50fa7b;">✅ Processed 6 SKUs with 3 variants each</span><br>
+<span style="color: #50fa7b;">📁 Generated 54 high-quality product images</span><br>
+<span style="color: #50fa7b;">⏱️  Total time: 4.2 minutes</span>
                 </div>
-            </section>
-        </main>
-        
-    
-        <!-- Bootstrap JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-        
-        <!-- Scroll Animation Script -->
-        <script>
-            function scrollToContact() {
-                const contactSection = document.getElementById("contact");
-                if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: "smooth" });
-                }
+            </div>
+
+            <div class="use-cases-section animate-on-scroll">
+                <h3>Industry Applications</h3>
+                <div class="use-cases-grid">
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-tshirt"></i> Fashion & Apparel</h4>
+                        <p>Generate lifestyle shots with different colors, sizes, and styling options. Create seasonal lookbooks automatically.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-couch"></i> Furniture & Home</h4>
+                        <p>Show furniture in various room settings with different materials, finishes, and lighting conditions.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-mobile-alt"></i> Electronics</h4>
+                        <p>Technical product shots with exploded views, feature callouts, and usage scenarios.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-car"></i> Automotive</h4>
+                        <p>Vehicle configurators with all color options, wheel styles, and interior combinations.</p>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h4>Ready to automate your product catalog?</h4>
+                    <p>See how Glint3D can transform your e-commerce workflow</p>
+                    <a href="download.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-download"></i> Try Glint3D Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Synthetic Data for AI/Robotics -->
+    <section id="synthetic-data" class="solution-detail">
+        <div class="solution-detail-content">
+            <div class="solution-header animate-on-scroll">
+                <div class="solution-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h2 class="solution-title">Synthetic Data for AI/Robotics</h2>
+                <p class="solution-description">
+                    <strong>Deterministic datasets for machine learning.</strong> Generate perfect training data with controlled randomization. Glint3D's deterministic pipeline ensures reproducible datasets with pixel-perfect labels—accelerating ML development and improving model evaluation.
+                </p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="code-showcase animate-on-scroll">
+<span class="terminal-prompt">$</span> python generate_dataset.py<br><br>
+<span style="color: #f8f8f2;">generator = DatasetGenerator(</span><br>
+&nbsp;&nbsp;<span style="color: #f8f8f2;">scene_template='warehouse_environment.json',</span><br>
+&nbsp;&nbsp;<span style="color: #f8f8f2;">object_library='objects/',</span><br>
+&nbsp;&nbsp;<span style="color: #f8f8f2;">randomization_config={</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">'lighting'</span>: {<span class="json-key">'intensity'</span>: [<span class="json-number">0.5</span>, <span class="json-number">2.0</span>]},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">'camera'</span>: {<span class="json-key">'height'</span>: [<span class="json-number">1.0</span>, <span class="json-number">2.5</span>]},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">'objects'</span>: {<span class="json-key">'count'</span>: [<span class="json-number">1</span>, <span class="json-number">5</span>]}<br>
+&nbsp;&nbsp;<span style="color: #f8f8f2;">}</span><br>
+<span style="color: #f8f8f2;">)</span><br><br>
+<span style="color: #f8f8f2;">dataset = generator.generate(</span><br>
+&nbsp;&nbsp;<span style="color: #f8f8f2;">count=10000,</span><br>
+&nbsp;&nbsp;<span style="color: #f8f8f2;">outputs=['rgb', 'depth', 'segmentation']</span><br>
+<span style="color: #f8f8f2;">)</span><br><br>
+<span style="color: #50fa7b;">✅ Generated 10,000 labeled training images</span><br>
+<span style="color: #50fa7b;">📊 Perfect pixel-level annotations</span><br>
+<span style="color: #50fa7b;">🔒 Cryptographic dataset verification</span>
+                </div>
+
+                <div class="solution-content animate-on-scroll">
+                    <h3>Technical Specifications</h3>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-crosshairs"></i> <strong>Perfect Labels:</strong> Exact depth, segmentation, and object data with metadata</li>
+                        <li><i class="fas fa-random"></i> <strong>Controlled Randomization:</strong> Domain adaptation without chaos or bias</li>
+                        <li><i class="fas fa-sync"></i> <strong>Reproducible Results:</strong> Identical datasets for fair model comparisons</li>
+                        <li><i class="fas fa-chart-line"></i> <strong>Scale Economics:</strong> Generate millions of labeled examples programmatically</li>
+                    </ul>
+
+                    <h3>Output Formats</h3>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-image"></i> RGB, depth, normals, segmentation masks</li>
+                        <li><i class="fas fa-square"></i> 2D/3D bounding boxes with object IDs</li>
+                        <li><i class="fas fa-cube"></i> 6DoF pose estimation ground truth</li>
+                        <li><i class="fas fa-eye-slash"></i> Occlusion percentages and visibility maps</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="use-cases-section animate-on-scroll">
+                <h3>AI/Robotics Applications</h3>
+                <div class="use-cases-grid">
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-robot"></i> Robotic Manipulation</h4>
+                        <p>Training data for object grasping, pick-and-place operations, and manipulation in cluttered environments.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-car-side"></i> Autonomous Vehicles</h4>
+                        <p>Traffic scenarios, weather conditions, and edge cases for self-driving car perception systems.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-user-md"></i> Medical AI</h4>
+                        <p>Anatomical variations, surgical simulations, and pathology detection training datasets.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-industry"></i> Industrial Inspection</h4>
+                        <p>Defect detection, quality control, and anomaly identification in manufacturing processes.</p>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h4>Need training data for your AI project?</h4>
+                    <p>Generate deterministic, high-quality synthetic datasets with Glint3D</p>
+                    <a href="download.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-download"></i> Start Generating Data
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Visualization & Storytelling -->
+    <section id="financial-viz" class="solution-detail">
+        <div class="solution-detail-content">
+            <div class="solution-header animate-on-scroll">
+                <div class="solution-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2 class="solution-title">Financial Visualization & Storytelling</h2>
+                <p class="solution-description">
+                    <strong>From CSV to cinematic.</strong> Transform financial data into compelling visual narratives. Generate animated portfolio drawdowns, risk scenarios, and branded presentations programmatically—updating visuals automatically as data changes.
+                </p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-content animate-on-scroll">
+                    <h3>Key Capabilities</h3>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-chart-area"></i> <strong>Data-Driven Animation:</strong> CSV/JSON inputs become cinematic sequences</li>
+                        <li><i class="fas fa-palette"></i> <strong>Brand Consistency:</strong> Templates ensure visual identity compliance</li>
+                        <li><i class="fas fa-sync-alt"></i> <strong>Automated Updates:</strong> Visuals refresh with new data automatically</li>
+                        <li><i class="fas fa-file-export"></i> <strong>Multi-Format Output:</strong> Video, interactive web, and PDF presentations</li>
+                    </ul>
+
+                    <h3>Financial Use Cases</h3>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-briefcase"></i> Portfolio performance summaries</li>
+                        <li><i class="fas fa-exclamation-triangle"></i> Risk visualization and stress testing</li>
+                        <li><i class="fas fa-handshake"></i> Client investment narratives</li>
+                        <li><i class="fas fa-file-contract"></i> Regulatory reporting visuals</li>
+                    </ul>
+                </div>
+
+                <div class="code-showcase animate-on-scroll">
+<span class="terminal-prompt">$</span> glint3d render --data portfolio_2024.csv \<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--template quarterly_report.json \<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--output Q4_2024_Report<br><br>
+<span style="color: #50fa7b;">✅ Generated animated portfolio report</span><br>
+<span style="color: #50fa7b;">📊 Performance: +12.4% YTD</span><br>
+<span style="color: #50fa7b;">📈 Drawdown analysis: -2.1% max</span><br>
+<span style="color: #50fa7b;">🎬 Output: Q4_2024_Performance.mp4</span><br>
+<span style="color: #50fa7b;">📄 PDF: Q4_2024_Report.pdf</span><br><br>
+<span class="terminal-prompt">$</span> # Daily automation pipeline<br>
+<span style="color: #f8f8f2;">crontab -l</span><br>
+<span style="color: #f8f8f2;">0 6 * * * glint3d render --data daily_portfolio.csv \</span><br>
+<span style="color: #f8f8f2;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--template daily_summary.json</span>
+                </div>
+            </div>
+
+            <div class="use-cases-section animate-on-scroll">
+                <h3>Financial Industry Applications</h3>
+                <div class="use-cases-grid">
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-university"></i> Asset Management</h4>
+                        <p>Automated fund performance reports, risk analytics, and client presentation materials.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-chart-pie"></i> Wealth Management</h4>
+                        <p>Personalized client portfolio reviews, goal tracking, and investment strategy visualizations.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-building"></i> Corporate Finance</h4>
+                        <p>Board presentations, investor relations materials, and financial planning scenarios.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-shield-alt"></i> Risk Management</h4>
+                        <p>Stress test visualizations, VaR reporting, and regulatory compliance documentation.</p>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h4>Transform your financial reporting</h4>
+                    <p>Automate compelling visual narratives from your data</p>
+                    <a href="download.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-download"></i> Get Started Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ImmersaLab</h3>
+                    <p>Building Glint3D—the AI-first rendering platform that turns 3D into data</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/immersalab/glint3d" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://discord.gg/glint3d" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://twitter.com/immersalab" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="product.html">Glint3D Engine</a></li>
+                            <li><a href="download.html">Download</a></li>
+                            <li><a href="resources.html">Documentation</a></li>
+                            <li><a href="demo.html">Web Demo</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="#product-viz">Product Visualization</a></li>
+                            <li><a href="#synthetic-data">Synthetic Data</a></li>
+                            <li><a href="#financial-viz">Financial Storytelling</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="https://github.com/immersalab/glint3d">GitHub</a></li>
+                            <li><a href="https://discord.gg/glint3d">Discord</a></li>
+                            <li><a href="resources.html#contributing">Contributing</a></li>
+                            <li><a href="company.html#careers">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="company.html">About</a></li>
+                            <li><a href="company.html#careers">We're Hiring</a></li>
+                            <li><a href="mailto:hello@immersalab.com">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ImmersaLab. Open source rendering for everyone. Licensed under MIT.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+        // Solutions page functionality
+        class SolutionsPage {
+            constructor() {
+                this.init();
             }
-    
-            document.addEventListener("DOMContentLoaded", function () {
+
+            init() {
+                this.setupIntersectionObserver();
+                this.setupNavigation();
+                this.setupCodeHighlighting();
+                this.setupSmoothScrolling();
+            }
+
+            setupIntersectionObserver() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            entry.target.classList.add('show');
+                            entry.target.classList.add('in-view');
                         }
                     });
-                }, { threshold: 0.3 });
-    
-                document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+                }, observerOptions);
+
+                document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            setupNavigation() {
+                const navToggle = document.querySelector('.nav-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+
+                if (navToggle) {
+                    navToggle.addEventListener('click', () => {
+                        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                        navToggle.setAttribute('aria-expanded', !isExpanded);
+                        navMenu.classList.toggle('active');
+                        document.body.classList.toggle('nav-open');
+                    });
+                }
+            }
+
+            setupCodeHighlighting() {
+                // Add copy functionality to code blocks
+                document.querySelectorAll('.code-showcase').forEach(block => {
+                    const copyBtn = document.createElement('button');
+                    copyBtn.className = 'copy-btn';
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                    copyBtn.setAttribute('aria-label', 'Copy code');
+
+                    copyBtn.addEventListener('click', async () => {
+                        try {
+                            await navigator.clipboard.writeText(block.textContent);
+                            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                            setTimeout(() => {
+                                copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                            }, 2000);
+                        } catch (err) {
+                            console.log('Copy failed:', err);
+                        }
+                    });
+
+                    block.style.position = 'relative';
+                    block.appendChild(copyBtn);
+                });
+            }
+
+            setupSmoothScrolling() {
+                // Smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const target = document.querySelector(link.getAttribute('href'));
+                        if (target) {
+                            e.preventDefault();
+                            const headerOffset = 100;
+                            const elementPosition = target.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+
+                            // Close mobile menu if open
+                            const navMenu = document.querySelector('.nav-menu');
+                            if (navMenu.classList.contains('active')) {
+                                navMenu.classList.remove('active');
+                                document.body.classList.remove('nav-open');
+                            }
+                        }
+                    });
+                });
+            }
+        }
+
+        // Initialize the solutions page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new SolutionsPage();
+        });
+
+        // Add staggered animation delays
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach((element, index) => {
+                element.style.transitionDelay = `${(index % 3) * 0.1}s`;
             });
-        </script>
-    
-    </body>
-    </html>
-    
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Scroll Animation Script -->
-    <script>
-        function scrollToContact() {
-            const contactSection = document.getElementById("contact");
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: "smooth" });
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                    }
-                });
-            }, { threshold: 0.3 });
-
-            document.querySelectorAll('.animate').forEach(el => observer.observe(el));
         });
     </script>
 
-</body>
-</html>
-
-    <script>
-        function scrollToContact() {
-            const contactSection = document.getElementById("contact");
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: "smooth" });
-            }
+    <style>
+        /* Copy button styles */
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
         }
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                    }
-                });
-            }, { threshold: 0.3 });
+        .copy-btn:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.2);
+        }
 
-            document.querySelectorAll('.animate').forEach(el => observer.observe(el));
-        });
-    </script>
+        .footer-social {
+            margin-top: var(--spacing-md);
+        }
 
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: var(--font-size-lg);
+            margin-right: var(--spacing-md);
+            transition: color var(--transition-fast);
+        }
+
+        .footer-social a:hover {
+            color: white;
+        }
+    </style>
 </body>
 </html>
