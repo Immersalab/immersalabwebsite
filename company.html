@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About ImmersaLab - Company Behind Glint3D</title>
+    <meta name="description" content="Learn about ImmersaLab, the team building Glint3D - the AI-first 3D rendering platform. Our mission, team, and career opportunities.">
+    <meta name="author" content="ImmersaLab">
+    <meta name="keywords" content="ImmersaLab, about, company, team, careers, glint3d, 3d rendering, AI">
+    <meta property="og:title" content="About ImmersaLab - Building the Future of 3D Rendering">
+    <meta property="og:description" content="Meet the team behind Glint3D and learn about our mission to make 3D rendering accessible through AI-first automation.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Glint3DIcon.png">
+
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=4">
+
+    <style>
+        /* Company page specific styles */
+        .company-hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: var(--spacing-4xl) 0 var(--spacing-3xl);
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .company-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-3xl);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: var(--spacing-lg);
+        }
+
+        .stat-number {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-color);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-top: var(--spacing-xs);
+        }
+
+        .mission-section {
+            padding: var(--spacing-4xl) 0;
+            background: var(--background-primary);
+        }
+
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-4xl);
+            align-items: center;
+        }
+
+        .mission-text {
+            font-size: var(--font-size-lg);
+            line-height: var(--line-height-relaxed);
+            color: var(--text-secondary);
+        }
+
+        .mission-visual {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-3xl);
+            color: white;
+            text-align: center;
+        }
+
+        .mission-visual i {
+            font-size: var(--font-size-5xl);
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .values-section {
+            padding: var(--spacing-4xl) 0;
+            background: var(--background-secondary);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-3xl);
+        }
+
+        .value-card {
+            background: white;
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-normal);
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-color);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .value-icon i {
+            font-size: var(--font-size-2xl);
+            color: white;
+        }
+
+        .value-card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+
+        .team-section {
+            padding: var(--spacing-4xl) 0;
+            background: var(--background-primary);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-3xl);
+        }
+
+        .team-member {
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-normal);
+        }
+
+        .team-member:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            font-size: var(--font-size-3xl);
+            color: white;
+            font-weight: var(--font-weight-bold);
+        }
+
+        .team-member h4 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-primary);
+        }
+
+        .team-role {
+            color: var(--primary-color);
+            font-weight: var(--font-weight-medium);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .team-bio {
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            line-height: var(--line-height-relaxed);
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .team-social a {
+            color: var(--text-muted);
+            font-size: var(--font-size-lg);
+            transition: color var(--transition-fast);
+        }
+
+        .team-social a:hover {
+            color: var(--primary-color);
+        }
+
+        .careers-section {
+            padding: var(--spacing-4xl) 0;
+            background: linear-gradient(135deg, var(--secondary-color), #2a2a2a);
+            color: white;
+        }
+
+        .careers-content {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-2xl);
+        }
+
+        .job-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition-normal);
+        }
+
+        .job-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .job-title {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .job-type {
+            color: var(--primary-color);
+            font-weight: var(--font-weight-medium);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .job-description {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: var(--line-height-relaxed);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .job-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .apply-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: all var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .apply-btn:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .contact-section {
+            padding: var(--spacing-4xl) 0;
+            background: var(--background-secondary);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .contact-card {
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-normal);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .contact-icon i {
+            font-size: var(--font-size-xl);
+            color: white;
+        }
+
+        .contact-card h4 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .contact-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            .mission-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .company-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-grid,
+            .careers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .company-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Header -->
+    <header class="modern-header">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container-fluid">
+                <!-- Brand -->
+                <a class="navbar-brand" href="index.html" aria-label="ImmersaLab Home">
+                    <span class="brand-text">IMMERSALAB</span>
+                </a>
+
+                <!-- Navigation Toggle -->
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+                    <span class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav-menu" id="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="product.html" class="nav-link">Product</a></li>
+                        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                        <li><a href="download.html" class="nav-link">Download</a></li>
+                        <li><a href="resources.html" class="nav-link">Resources</a></li>
+                        <li><a href="company.html" class="nav-link">Company</a></li>
+                    </ul>
+                    <div class="nav-cta">
+                        <a href="https://github.com/QuinnAho/Glint3D" data-download="true" class="btn btn-primary btn-sm">
+                            <i class="fas fa-download"></i> Get Glint3D
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Company Hero Section -->
+    <section class="company-hero">
+        <div class="container">
+            <h1 class="section-title">About ImmersaLab</h1>
+            <p class="section-subtitle">We're building the future of 3D rendering through AI-first automation, making professional visualization accessible to everyone.</p>
+
+            <div class="company-stats">
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">2021</span>
+                    <div class="stat-label">Founded</div>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">45k+</span>
+                    <div class="stat-label">Downloads</div>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">89</span>
+                    <div class="stat-label">Contributors</div>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">MIT</span>
+                    <div class="stat-label">Open Source</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text animate-on-scroll">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: var(--spacing-lg);">Our Mission</h2>
+                    <p class="mission-text">
+                        <strong>3D visualization should be as easy as writing code.</strong> For too long, professional 3D rendering has been locked behind expensive software, powerful hardware, and steep learning curves.
+                    </p>
+                    <p class="mission-text">
+                        We're changing that. Glint3D brings browser-native rendering, automation-first design, and AI-ready architecture to everyone. Whether you're a solo developer, a Fortune 500 company, or an AI researcher, beautiful 3D should be accessible with just a few lines of code.
+                    </p>
+                    <p class="mission-text">
+                        <strong>Open source.</strong> <strong>Browser-native.</strong> <strong>AI-ready.</strong> This is 3D for the modern web.
+                    </p>
+                </div>
+                <div class="mission-visual animate-on-scroll">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Democratizing 3D</h3>
+                    <p>Making professional visualization accessible to developers, designers, and AI systems worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Values</h2>
+                <p class="section-subtitle">The principles that guide everything we build</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-unlock"></i>
+                    </div>
+                    <h3>Open by Default</h3>
+                    <p>We believe powerful tools should be accessible to everyone. Open source isn't just our license—it's our philosophy.</p>
+                </div>
+
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-First Design</h3>
+                    <p>Built for humans, designed for automation. Every API, every workflow is crafted with AI agents and automation in mind.</p>
+                </div>
+
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web-Native</h3>
+                    <p>The browser is the most democratic platform ever created. We're building for the web because it reaches everyone.</p>
+                </div>
+
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Community Driven</h3>
+                    <p>Our best ideas come from our users. We build with our community, not just for them.</p>
+                </div>
+
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-zap"></i>
+                    </div>
+                    <h3>Performance Matters</h3>
+                    <p>Beautiful shouldn't mean slow. We obsess over performance so creativity flows without friction.</p>
+                </div>
+
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Always Learning</h3>
+                    <p>Technology evolves fast. We stay curious, embrace new ideas, and aren't afraid to be wrong if it means moving forward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet the Team</h2>
+                <p class="section-subtitle">The people building the future of 3D rendering</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member animate-on-scroll">
+                    <div class="team-avatar">QA</div>
+                    <h4>Quinn Aho</h4>
+                    <div class="team-role">Founder & CEO</div>
+                    <p class="team-bio">Former graphics engineer with a passion for making complex technology accessible. Led 3D pipeline development at scale before founding ImmersaLab.</p>
+                    <div class="team-social">
+                        <a href="https://github.com/quinaho" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/quinaho" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/quinaho" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-member animate-on-scroll">
+                    <div class="team-avatar">AS</div>
+                    <h4>Alex Smith</h4>
+                    <div class="team-role">Lead Engineer</div>
+                    <p class="team-bio">Full-stack developer specializing in WebGPU and modern rendering pipelines. Architect of Glint3D's core engine and automation systems.</p>
+                    <div class="team-social">
+                        <a href="https://github.com/alexsmith" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/alexsmith" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-member animate-on-scroll">
+                    <div class="team-avatar">MJ</div>
+                    <h4>Maya Johnson</h4>
+                    <div class="team-role">Head of Design</div>
+                    <p class="team-bio">Product designer focused on developer experience. Creates intuitive interfaces that make complex 3D workflows feel natural and approachable.</p>
+                    <div class="team-social">
+                        <a href="https://dribbble.com/mayajohnson" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                        <a href="https://twitter.com/mayajohnson" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-member animate-on-scroll">
+                    <div class="team-avatar">DC</div>
+                    <h4>David Chen</h4>
+                    <div class="team-role">AI Research Lead</div>
+                    <p class="team-bio">PhD in Computer Vision from Stanford. Leads research into AI-driven rendering optimization and automated scene understanding.</p>
+                    <div class="team-social">
+                        <a href="https://github.com/davidchen" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://scholar.google.com/davidchen" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-member animate-on-scroll">
+                    <div class="team-avatar">SR</div>
+                    <h4>Sarah Rodriguez</h4>
+                    <div class="team-role">Community Manager</div>
+                    <p class="team-bio">Builds bridges between our team and the open source community. Organizes events, manages documentation, and ensures every voice is heard.</p>
+                    <div class="team-social">
+                        <a href="https://github.com/sarahrodriguez" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/sarahrodriguez" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-member animate-on-scroll">
+                    <div class="team-avatar">JP</div>
+                    <h4>Join Us</h4>
+                    <div class="team-role">Your Role Here</div>
+                    <p class="team-bio">We're looking for passionate people who want to shape the future of 3D rendering. Check out our open positions below.</p>
+                    <div class="team-social">
+                        <a href="#careers" aria-label="Careers"><i class="fas fa-arrow-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="careers-section">
+        <div class="container">
+            <div class="careers-content">
+                <h2 class="section-title" style="color: white;">Join Our Team</h2>
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Help us build the next generation of 3D rendering technology</p>
+            </div>
+
+            <div class="careers-grid">
+                <div class="job-card animate-on-scroll">
+                    <div class="job-title">Senior Graphics Engineer</div>
+                    <div class="job-type">Full-time • Remote</div>
+                    <p class="job-description">
+                        Join our core team building the next generation of web-native 3D rendering. Work with WebGPU, Vulkan, and cutting-edge graphics APIs.
+                    </p>
+                    <div class="job-skills">
+                        <span class="skill-tag">WebGPU</span>
+                        <span class="skill-tag">Vulkan</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">WASM</span>
+                    </div>
+                    <a href="mailto:careers@immersalab.com?subject=Senior Graphics Engineer Application" class="apply-btn">
+                        <i class="fas fa-paper-plane"></i> Apply Now
+                    </a>
+                </div>
+
+                <div class="job-card animate-on-scroll">
+                    <div class="job-title">AI/ML Engineer</div>
+                    <div class="job-type">Full-time • Remote</div>
+                    <p class="job-description">
+                        Develop AI systems that understand 3D scenes, optimize rendering parameters, and automate complex workflows. Shape the future of AI-first 3D.
+                    </p>
+                    <div class="job-skills">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MLOps</span>
+                        <span class="skill-tag">3D Math</span>
+                    </div>
+                    <a href="mailto:careers@immersalab.com?subject=AI/ML Engineer Application" class="apply-btn">
+                        <i class="fas fa-paper-plane"></i> Apply Now
+                    </a>
+                </div>
+
+                <div class="job-card animate-on-scroll">
+                    <div class="job-title">DevRel Engineer</div>
+                    <div class="job-type">Full-time • Remote</div>
+                    <p class="job-description">
+                        Be the bridge between our engineering team and developer community. Create content, speak at conferences, and help developers succeed with Glint3D.
+                    </p>
+                    <div class="job-skills">
+                        <span class="skill-tag">Technical Writing</span>
+                        <span class="skill-tag">Public Speaking</span>
+                        <span class="skill-tag">3D Graphics</span>
+                        <span class="skill-tag">Developer Tools</span>
+                    </div>
+                    <a href="mailto:careers@immersalab.com?subject=DevRel Engineer Application" class="apply-btn">
+                        <i class="fas fa-paper-plane"></i> Apply Now
+                    </a>
+                </div>
+
+                <div class="job-card animate-on-scroll">
+                    <div class="job-title">Open Source Maintainer</div>
+                    <div class="job-type">Part-time • Remote</div>
+                    <p class="job-description">
+                        Help manage our growing open source community. Review PRs, triage issues, and help contributors succeed. Perfect for active OSS contributors.
+                    </p>
+                    <div class="job-skills">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Community</span>
+                    </div>
+                    <a href="mailto:careers@immersalab.com?subject=Open Source Maintainer Application" class="apply-btn">
+                        <i class="fas fa-paper-plane"></i> Apply Now
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--spacing-3xl);">
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: var(--spacing-lg);">
+                    Don't see the right role? We're always looking for exceptional people.
+                </p>
+                <a href="mailto:careers@immersalab.com?subject=General Interest" class="apply-btn">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Have questions? Want to partner with us? We'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>General Inquiries</h4>
+                    <p>Questions about Glint3D or ImmersaLab</p>
+                    <a href="mailto:hello@immersalab.com">hello@immersalab.com</a>
+                </div>
+
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h4>Business & Partnerships</h4>
+                    <p>Enterprise solutions and collaboration</p>
+                    <a href="mailto:business@immersalab.com">business@immersalab.com</a>
+                </div>
+
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Careers</h4>
+                    <p>Join our team building the future of 3D</p>
+                    <a href="mailto:careers@immersalab.com">careers@immersalab.com</a>
+                </div>
+
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h4>Press & Media</h4>
+                    <p>Media inquiries and press resources</p>
+                    <a href="mailto:press@immersalab.com">press@immersalab.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ImmersaLab</h3>
+                    <p>Building Glint3D—the AI-first rendering platform that turns 3D into data</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/immersalab/glint3d" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://discord.gg/glint3d" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://twitter.com/immersalab" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="product.html">Glint3D Engine</a></li>
+                            <li><a href="download.html">Download</a></li>
+                            <li><a href="resources.html">Documentation</a></li>
+                            <li><a href="demo.html">Web Demo</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solutions.html#product-viz">Product Visualization</a></li>
+                            <li><a href="solutions.html#synthetic-data">Synthetic Data</a></li>
+                            <li><a href="solutions.html#financial-viz">Financial Storytelling</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="https://github.com/immersalab/glint3d">GitHub</a></li>
+                            <li><a href="https://discord.gg/glint3d">Discord</a></li>
+                            <li><a href="resources.html#contributing">Contributing</a></li>
+                            <li><a href="company.html#careers">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="company.html">About</a></li>
+                            <li><a href="company.html#careers">We're Hiring</a></li>
+                            <li><a href="mailto:hello@immersalab.com">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ImmersaLab. Open source rendering for everyone. Licensed under MIT.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+        // Company page functionality
+        class CompanyPage {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.setupIntersectionObserver();
+                this.setupNavigation();
+                this.setupAnalytics();
+            }
+
+            setupIntersectionObserver() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            setupNavigation() {
+                const navToggle = document.querySelector('.nav-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+
+                if (navToggle) {
+                    navToggle.addEventListener('click', () => {
+                        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                        navToggle.setAttribute('aria-expanded', !isExpanded);
+                        navMenu.classList.toggle('active');
+                        document.body.classList.toggle('nav-open');
+                    });
+                }
+
+                // Track job application clicks
+                document.querySelectorAll('.apply-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const jobTitle = e.target.closest('.job-card')?.querySelector('.job-title')?.textContent || 'Unknown';
+                        this.trackEvent('job_application_click', {
+                            job_title: jobTitle,
+                            email: e.target.href
+                        });
+                    });
+                });
+
+                // Smooth scrolling
+                document.querySelectorAll('a[href^="#"]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const target = document.querySelector(link.getAttribute('href'));
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                });
+            }
+
+            setupAnalytics() {
+                this.trackEvent('page_view', {
+                    page: 'company',
+                    timestamp: new Date().toISOString()
+                });
+
+                // Track scroll depth
+                let maxScrollDepth = 0;
+                window.addEventListener('scroll', () => {
+                    const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                    if (scrollDepth > maxScrollDepth) {
+                        maxScrollDepth = scrollDepth;
+                        if (maxScrollDepth % 25 === 0) {
+                            this.trackEvent('scroll_depth', { depth: maxScrollDepth });
+                        }
+                    }
+                });
+            }
+
+            trackEvent(eventName, properties = {}) {
+                console.log('Analytics:', eventName, properties);
+                // Analytics implementation would go here
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new CompanyPage();
+        });
+    </script>
+</body>
+</html>
