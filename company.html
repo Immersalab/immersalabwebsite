@@ -105,7 +105,7 @@
         }
 
         .value-card {
-            background: white;
+            background: var(--background-tertiary);
             padding: var(--spacing-2xl);
             border-radius: var(--radius-xl);
             text-align: center;
@@ -156,7 +156,7 @@
         }
 
         .team-member {
-            background: white;
+            background: var(--background-tertiary);
             padding: var(--spacing-xl);
             border-radius: var(--radius-xl);
             text-align: center;
@@ -317,7 +317,7 @@
         }
 
         .contact-card {
-            background: white;
+            background: var(--background-tertiary);
             padding: var(--spacing-xl);
             border-radius: var(--radius-lg);
             text-align: center;
@@ -543,74 +543,34 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Meet the Team</h2>
-                <p class="section-subtitle">The people building the future of 3D rendering</p>
             </div>
 
             <div class="team-grid">
                 <div class="team-member animate-on-scroll">
                     <div class="team-avatar">QA</div>
                     <h4>Quinn Aho</h4>
-                    <div class="team-role">Founder & CEO</div>
-                    <p class="team-bio">Former graphics engineer with a passion for making complex technology accessible. Led 3D pipeline development at scale before founding ImmersaLab.</p>
+                    <p class="team-bio">Building the future of rendering systems</p>
                     <div class="team-social">
                         <a href="https://github.com/quinaho" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://twitter.com/quinaho" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="https://linkedin.com/in/quinaho" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
 
                 <div class="team-member animate-on-scroll">
-                    <div class="team-avatar">AS</div>
-                    <h4>Alex Smith</h4>
-                    <div class="team-role">Lead Engineer</div>
-                    <p class="team-bio">Full-stack developer specializing in WebGPU and modern rendering pipelines. Architect of Glint3D's core engine and automation systems.</p>
+                    <div class="team-avatar">AA</div>
+                    <h4>Amjad Althabteh</h4>
+                    <p class="team-bio">Architecting distributed graphics pipelines</p>
                     <div class="team-social">
-                        <a href="https://github.com/alexsmith" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://twitter.com/alexsmith" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/amjad-althabteh" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
 
                 <div class="team-member animate-on-scroll">
-                    <div class="team-avatar">MJ</div>
-                    <h4>Maya Johnson</h4>
-                    <div class="team-role">Head of Design</div>
-                    <p class="team-bio">Product designer focused on developer experience. Creates intuitive interfaces that make complex 3D workflows feel natural and approachable.</p>
-                    <div class="team-social">
-                        <a href="https://dribbble.com/mayajohnson" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
-                        <a href="https://twitter.com/mayajohnson" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <div class="team-avatar">
+                        <i class="fas fa-users"></i>
                     </div>
-                </div>
-
-                <div class="team-member animate-on-scroll">
-                    <div class="team-avatar">DC</div>
-                    <h4>David Chen</h4>
-                    <div class="team-role">AI Research Lead</div>
-                    <p class="team-bio">PhD in Computer Vision from Stanford. Leads research into AI-driven rendering optimization and automated scene understanding.</p>
-                    <div class="team-social">
-                        <a href="https://github.com/davidchen" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://scholar.google.com/davidchen" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                    </div>
-                </div>
-
-                <div class="team-member animate-on-scroll">
-                    <div class="team-avatar">SR</div>
-                    <h4>Sarah Rodriguez</h4>
-                    <div class="team-role">Community Manager</div>
-                    <p class="team-bio">Builds bridges between our team and the open source community. Organizes events, manages documentation, and ensures every voice is heard.</p>
-                    <div class="team-social">
-                        <a href="https://github.com/sarahrodriguez" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://twitter.com/sarahrodriguez" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-
-                <div class="team-member animate-on-scroll">
-                    <div class="team-avatar">JP</div>
-                    <h4>Join Us</h4>
-                    <div class="team-role">Your Role Here</div>
-                    <p class="team-bio">We're looking for passionate people who want to shape the future of 3D rendering. Check out our open positions below.</p>
-                    <div class="team-social">
-                        <a href="#careers" aria-label="Careers"><i class="fas fa-arrow-down"></i></a>
-                    </div>
+                    <h4>Early Contributors</h4>
+                    <p class="team-bio">Friends and collaborators who tested the product and helped shape the vision</p>
                 </div>
             </div>
         </div>
@@ -643,23 +603,7 @@
                     </a>
                 </div>
 
-                <div class="job-card animate-on-scroll">
-                    <div class="job-title">AI/ML Engineer</div>
-                    <div class="job-type">Full-time • Remote</div>
-                    <p class="job-description">
-                        Develop AI systems that understand 3D scenes, optimize rendering parameters, and automate complex workflows. Shape the future of AI-first 3D.
-                    </p>
-                    <div class="job-skills">
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Computer Vision</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">MLOps</span>
-                        <span class="skill-tag">3D Math</span>
-                    </div>
-                    <a href="mailto:careers@immersalab.com?subject=AI/ML Engineer Application" class="apply-btn">
-                        <i class="fas fa-paper-plane"></i> Apply Now
-                    </a>
-                </div>
+                
 
                 <div class="job-card animate-on-scroll">
                     <div class="job-title">DevRel Engineer</div>
@@ -718,38 +662,20 @@
             <div class="contact-grid">
                 <div class="contact-card animate-on-scroll">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fab fa-linkedin"></i>
                     </div>
-                    <h4>General Inquiries</h4>
-                    <p>Questions about Glint3D or ImmersaLab</p>
-                    <a href="mailto:hello@immersalab.com">hello@immersalab.com</a>
+                    <h4>Connect on LinkedIn</h4>
+                    <p>Follow us for updates, insights, and company news</p>
+                    <a href="https://www.linkedin.com/company/immersalab/" target="_blank" rel="noopener noreferrer">Visit our LinkedIn</a>
                 </div>
 
                 <div class="contact-card animate-on-scroll">
                     <div class="contact-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fab fa-github"></i>
                     </div>
-                    <h4>Business & Partnerships</h4>
-                    <p>Enterprise solutions and collaboration</p>
-                    <a href="mailto:business@immersalab.com">business@immersalab.com</a>
-                </div>
-
-                <div class="contact-card animate-on-scroll">
-                    <div class="contact-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h4>Careers</h4>
-                    <p>Join our team building the future of 3D</p>
-                    <a href="mailto:careers@immersalab.com">careers@immersalab.com</a>
-                </div>
-
-                <div class="contact-card animate-on-scroll">
-                    <div class="contact-icon">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <h4>Press & Media</h4>
-                    <p>Media inquiries and press resources</p>
-                    <a href="mailto:press@immersalab.com">press@immersalab.com</a>
+                    <h4>Open Source</h4>
+                    <p>Explore Glint3D and contribute to the project</p>
+                    <a href="https://github.com/QuinnAho/Glint3D" target="_blank" rel="noopener noreferrer">View on GitHub</a>
                 </div>
             </div>
         </div>
