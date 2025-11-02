@@ -3,779 +3,166 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Download Glint3D - The Living Renderer</title>
-    <meta name="description" content="Download the Living Renderer for Windows, macOS, and Linux. A self-improving, AI-native 3D platform that learns, adapts, and improves with every frame.">
-    <meta name="author" content="ImmersaLab">
-    <meta name="keywords" content="download glint3d, living renderer, AI-native rendering, self-improving renderer, free 3d software">
-    <meta property="og:title" content="Download Glint3D - The Living Renderer">
-    <meta property="og:description" content="A renderer that learns and improves. Free, open source, ready for production. Build platforms for automation.">
-    <meta property="og:type" content="website">
-
-    <!-- Favicon -->
+    <title>Get Glint3D - Download the AI-Native Rendering OS</title>
+    <meta name="description" content="Download Glint3D for Windows, macOS, and Linux. Spin up the AI-native rendering OS with desktop builds, Docker images, and CLI tooling.">
     <link rel="icon" type="image/png" href="Glint3DIcon.png">
 
-    <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=4">
-
-    <style>
-        /* Download page specific styles */
-        .download-hero {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            padding: var(--spacing-4xl) 0 var(--spacing-3xl);
-            margin-top: 80px;
-            text-align: center;
-        }
-
-        .download-platforms {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-2xl);
-            margin-top: var(--spacing-3xl);
-        }
-
-        .platform-card {
-            background: var(--background-tertiary);
-            border-radius: var(--radius-xl);
-            padding: var(--spacing-2xl);
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--border-color);
-            transition: all var(--transition-normal);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .platform-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-heavy);
-            border-color: var(--primary-color);
-        }
-
-        .platform-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-        }
-
-        .platform-icon {
-            font-size: var(--font-size-4xl);
-            margin-bottom: var(--spacing-lg);
-            color: var(--text-secondary);
-        }
-
-        .platform-card h3 {
-            font-size: var(--font-size-2xl);
-            font-weight: var(--font-weight-semibold);
-            margin-bottom: var(--spacing-sm);
-            color: var(--text-primary);
-        }
-
-        .platform-details {
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-lg);
-            font-size: var(--font-size-sm);
-        }
-
-        .download-btn {
-            width: 100%;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .version-info {
-            font-size: var(--font-size-xs);
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            padding-top: var(--spacing-md);
-            margin-top: var(--spacing-md);
-        }
-
-        .requirements-section {
-            background: var(--background-secondary);
-            padding: var(--spacing-4xl) 0;
-        }
-
-        .requirements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-xl);
-            margin-top: var(--spacing-2xl);
-        }
-
-        .requirement-item {
-            background: var(--background-tertiary);
-            padding: var(--spacing-xl);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--border-color);
-        }
-
-        .requirement-item h4 {
-            font-size: var(--font-size-lg);
-            font-weight: var(--font-weight-semibold);
-            margin-bottom: var(--spacing-md);
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-        }
-
-        .requirement-item i {
-            color: var(--primary-color);
-        }
-
-        .requirement-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .requirement-list li {
-            padding: var(--spacing-xs) 0;
-            color: var(--text-secondary);
-            font-size: var(--font-size-sm);
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-        }
-
-        .requirement-list li::before {
-            content: '✓';
-            color: var(--accent-color);
-            font-weight: var(--font-weight-bold);
-        }
-
-        .installation-section {
-            padding: var(--spacing-4xl) 0;
-        }
-
-        .code-block {
-            background: #1a1a1a;
-            color: #f8f8f2;
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            overflow-x: auto;
-            margin: var(--spacing-lg) 0;
-            border-left: 4px solid var(--primary-color);
-            position: relative;
-        }
-
-        .terminal-prompt {
-            color: #50fa7b;
-        }
-
-        .tab-container {
-            background: var(--background-tertiary);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-medium);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        .tab-nav {
-            display: flex;
-            background: var(--background-tertiary);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .tab-btn {
-            flex: 1;
-            padding: var(--spacing-md);
-            background: none;
-            border: none;
-            font-weight: var(--font-weight-medium);
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all var(--transition-fast);
-            border-bottom: 2px solid transparent;
-        }
-
-        .tab-btn.active {
-            color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-            background: var(--background-tertiary);
-        }
-
-        .tab-content {
-            padding: var(--spacing-xl);
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .support-section {
-            background: linear-gradient(135deg, var(--secondary-color), #2a2a2a);
-            color: white;
-            padding: var(--spacing-4xl) 0;
-        }
-
-        .support-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-2xl);
-            margin-top: var(--spacing-2xl);
-        }
-
-        .support-item {
-            text-align: center;
-            padding: var(--spacing-xl);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-lg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .support-item i {
-            font-size: var(--font-size-3xl);
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .support-item h4 {
-            font-size: var(--font-size-lg);
-            font-weight: var(--font-weight-semibold);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .support-item a {
-            color: white;
-            text-decoration: none;
-            font-weight: var(--font-weight-medium);
-            display: inline-flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            margin-top: var(--spacing-md);
-            transition: color var(--transition-fast);
-        }
-
-        .support-item a:hover {
-            color: var(--primary-color);
-        }
-
-        .copy-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            padding: 5px 8px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 12px;
-            opacity: 0.7;
-            transition: opacity 0.2s;
-        }
-
-        .copy-btn:hover {
-            opacity: 1;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        @media (max-width: 768px) {
-            .download-platforms {
-                grid-template-columns: 1fr;
-            }
-
-            .tab-nav {
-                flex-direction: column;
-            }
-
-            .tab-btn {
-                text-align: left;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
-    <!-- Modern Header -->
-    <header class="modern-header">
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
-            <div class="container-fluid">
-                <!-- Brand -->
-                <a class="navbar-brand" href="index.html" aria-label="ImmersaLab Home">
-                    <span class="brand-text">IMMERSALAB</span>
-                </a>
-
-                <!-- Navigation Toggle -->
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
-                    <span class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
-
-                <!-- Navigation Menu -->
-                <div class="nav-menu" id="main-nav">
-                    <ul class="nav-links">
-                        <li><a href="product.html" class="nav-link">Product</a></li>
-                        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-                        <li><a href="download.html" class="nav-link">Download</a></li>
-                        <li><a href="resources.html" class="nav-link">Resources</a></li>
-                        <li><a href="company.html" class="nav-link">Company</a></li>
-                    </ul>
-                    <div class="nav-cta">
-                        <a href="https://github.com/QuinnAho/Glint3D" data-download="true" class="btn btn-primary btn-sm">
-                            <i class="fas fa-download"></i> Get Glint3D
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="site-brand" href="index.html" aria-label="ImmersaLab home">
+                <img class="site-brand__logo" src="Glint3DIcon.png" alt="" aria-hidden="true">
+                <span class="site-brand__text">immersalab</span><span class="site-brand__cursor" aria-hidden="true"></span>
+            </a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a class="site-nav__link" href="company.html">Team</a>
+                <a class="site-nav__link" href="download.html" aria-current="page">Download</a>
+                <a class="site-nav__link" href="mailto:hello@glint3d.dev">Contact</a>
+            </nav>
+            <a class="btn btn--ghost" href="download.html" aria-current="page">Get Glint3D</a>
+        </div>
     </header>
 
-    <!-- Download Hero Section -->
-    <section class="download-hero">
-        <div class="container">
-            <h1 class="section-title">Download Glint3D</h1>
-            <p class="section-subtitle">Get the Living Renderer for your platform. A self-improving, AI-native 3D engine that learns, adapts, and improves with every frame. Free, open source, ready for production.</p>
-
-            <div class="download-platforms">
-                <div class="platform-card animate-on-scroll">
-                    <i class="fab fa-windows platform-icon"></i>
-                    <h3>Windows</h3>
-                    <div class="platform-details">
-                        Windows 10/11 (64-bit)<br>
-                        Intel/AMD x64 processors
+    <main id="main">
+        <section class="download-hero">
+            <div class="download-hero__layout container">
+                <div class="download-hero__copy">
+                    <p class="download-hero__eyebrow">Install today</p>
+                    <h1 class="download-hero__title">Bring the rendering OS to your pipeline.</h1>
+                    <p class="download-hero__lead">
+                        Choose a ready-to-run desktop build or integrate Glint3D through Docker and CLI-first workflows. Every release includes GPU-aware orchestration, automation hooks, and AI copilots out of the box.
+                    </p>
+                    <div class="download-hero__actions">
+                        <a class="btn btn--primary" href="#desktop">Desktop installers</a>
+                        <a class="btn btn--outline" href="#cli">CLI & Docker</a>
                     </div>
-                    <a href="https://github.com/QuinnAho/Glint3D/releases/latest/download/glint3d-windows-x64.zip" class="btn btn-primary download-btn">
-                        <i class="fas fa-download"></i> Download for Windows
-                    </a>
-                    <div class="version-info">
-                        Version 1.0.0 • 45.2 MB<br>
-                        SHA256: a1b2c3d4...
-                    </div>
+                    <p class="download-hero__note">Latest release: v0.9.4 • Updated weekly with hotfixes and device packs.</p>
                 </div>
-
-                <div class="platform-card animate-on-scroll">
-                    <i class="fab fa-apple platform-icon"></i>
-                    <h3>macOS</h3>
-                    <div class="platform-details">
-                        macOS 11.0+ (Big Sur)<br>
-                        Intel x64 & Apple Silicon
-                    </div>
-                    <a href="https://github.com/QuinnAho/Glint3D/releases/latest/download/glint3d-macos-universal.dmg" class="btn btn-primary download-btn">
-                        <i class="fas fa-download"></i> Download for macOS
-                    </a>
-                    <div class="version-info">
-                        Version 1.0.0 • 52.1 MB<br>
-                        SHA256: e5f6g7h8...
-                    </div>
-                </div>
-
-                <div class="platform-card animate-on-scroll">
-                    <i class="fab fa-linux platform-icon"></i>
-                    <h3>Linux</h3>
-                    <div class="platform-details">
-                        Ubuntu 20.04+, CentOS 8+<br>
-                        x64 & ARM64 architectures
-                    </div>
-                    <a href="https://github.com/QuinnAho/Glint3D/releases/latest/download/glint3d-linux-x64.tar.gz" class="btn btn-primary download-btn">
-                        <i class="fas fa-download"></i> Download for Linux
-                    </a>
-                    <div class="version-info">
-                        Version 1.0.0 • 41.8 MB<br>
-                        SHA256: i9j0k1l2...
+                <div class="download-hero__panel" aria-hidden="true">
+                    <div class="download-release-card">
+                        <header class="download-release-card__header">
+                            <span class="download-release-card__tag">release v0.9.4</span>
+                            <span class="download-release-card__date">published 3 days ago</span>
+                        </header>
+                        <ul class="download-release-card__list">
+                            <li>⚡ Adaptive sampler speedups for RTX 40-series.</li>
+                            <li>🤖 New AI co-pilot tasks for animation and lighting.</li>
+                            <li>🌐 Headless mode for distributed render farms.</li>
+                        </ul>
+                        <div class="download-release-card__footer">
+                            <span>Checksum: 9f3a8d/glint3d/0.9.4</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- System Requirements -->
-    <section class="requirements-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">System Requirements</h2>
-                <p class="section-subtitle">Designed to run efficiently on modern hardware. No expensive GPUs required—works on laptops and desktops alike.</p>
+        <section class="download-section" id="desktop">
+            <div class="container">
+                <header class="download-section__header">
+                    <h2>Desktop installers</h2>
+                    <p>Signed builds with GPU drivers tuned for workstation and studio deployment.</p>
+                </header>
+                <div class="download-grid">
+                    <article class="download-card">
+                        <h3>Windows 11 / 10</h3>
+                        <p>Installer with DirectX + Vulkan backends, optional CUDA extensions, and auto-update service.</p>
+                        <ul>
+                            <li>Supports NVIDIA, AMD, Intel ARC.</li>
+                            <li>Installs background orchestrator for job queuing.</li>
+                            <li>Includes Visual Studio redistributables.</li>
+                        </ul>
+                        <a class="btn btn--primary" href="#">Download .msi</a>
+                    </article>
+                    <article class="download-card">
+                        <h3>macOS (Apple Silicon)</h3>
+                        <p>Universal build optimized for M-series GPUs with Metal acceleration and offline RayKit.</p>
+                        <ul>
+                            <li>macOS 13 Ventura or newer.</li>
+                            <li>Native arm64 binary; Intel fallback via Rosetta.</li>
+                            <li>Ships with CLI and automation scripts.</li>
+                        </ul>
+                        <a class="btn btn--primary" href="#">Download .dmg</a>
+                    </article>
+                    <article class="download-card">
+                        <h3>Linux (Ubuntu / Fedora)</h3>
+                        <p>AppImage plus shell scripts for systemd services, focused on render farm orchestration.</p>
+                        <ul>
+                            <li>GLIBC 2.31+, kernel 5.15+.</li>
+                            <li>Supports NVIDIA and Mesa-based drivers.</li>
+                            <li>Includes Docker compose stack and CLI.</li>
+                        </ul>
+                        <a class="btn btn--primary" href="#">Download AppImage</a>
+                    </article>
+                </div>
             </div>
+        </section>
 
-            <div class="requirements-grid">
-                <div class="requirement-item animate-on-scroll">
-                    <h4><i class="fas fa-microchip"></i> Processor</h4>
-                    <ul class="requirement-list">
-                        <li>Minimum: Dual-core 2.0 GHz</li>
-                        <li>Recommended: Quad-core 3.0 GHz+</li>
-                        <li>Supports Intel x64 & ARM64</li>
+        <section class="download-section" id="cli">
+            <div class="container download-cli">
+                <div class="download-cli__copy">
+                    <h2>CLI & Docker</h2>
+                    <p>Roll Glint3D into CI pipelines, headless render farms, and AI-driven workflows.</p>
+                    <ul>
+                        <li>CLI shipped as `glint` for Windows, macOS, and Linux.</li>
+                        <li>Docker images include GPU drivers, scheduler, and observability stack.</li>
+                        <li>API tokens with granular scopes for automation agents.</li>
                     </ul>
-                </div>
-
-                <div class="requirement-item animate-on-scroll">
-                    <h4><i class="fas fa-memory"></i> Memory</h4>
-                    <ul class="requirement-list">
-                        <li>Minimum: 4 GB RAM</li>
-                        <li>Recommended: 8 GB RAM+</li>
-                        <li>Scales with scene complexity</li>
-                    </ul>
-                </div>
-
-                <div class="requirement-item animate-on-scroll">
-                    <h4><i class="fas fa-display"></i> Graphics</h4>
-                    <ul class="requirement-list">
-                        <li>OpenGL 3.3+ support</li>
-                        <li>DirectX 11+ (Windows)</li>
-                        <li>Dedicated GPU recommended</li>
-                    </ul>
-                </div>
-
-                <div class="requirement-item animate-on-scroll">
-                    <h4><i class="fas fa-hdd"></i> Storage</h4>
-                    <ul class="requirement-list">
-                        <li>Installation: 200 MB</li>
-                        <li>Working space: 1 GB+</li>
-                        <li>SSD recommended for projects</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Installation Instructions -->
-    <section class="installation-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Installation & Setup</h2>
-                <p class="section-subtitle">Get up and running with Glint3D in minutes</p>
-            </div>
-
-            <div class="tab-container">
-                <div class="tab-nav">
-                    <button class="tab-btn active" data-tab="windows">Windows</button>
-                    <button class="tab-btn" data-tab="macos">macOS</button>
-                    <button class="tab-btn" data-tab="linux">Linux</button>
-                </div>
-
-                <div class="tab-content active" id="windows-content">
-                    <h4>Windows Installation</h4>
-                    <ol>
-                        <li>Download the Windows installer (glint3d-windows-x64.zip)</li>
-                        <li>Extract the ZIP file to your desired location</li>
-                        <li>Run glint3d.exe to start the application</li>
-                        <li>Optionally, add to PATH for command-line access</li>
-                    </ol>
-
-                    <div class="code-block">
-<span class="terminal-prompt"># Add to PATH (PowerShell as Administrator)</span><br>
-$env:PATH += ";C:\path\to\glint3d"<br>
-<span class="terminal-prompt"># Verify installation</span><br>
-glint3d --version
+                    <div class="download-cli__links">
+                        <a class="btn btn--outline" href="#">Pull Docker image</a>
+                        <a class="btn btn--outline" href="#">Read CLI docs</a>
                     </div>
                 </div>
+                <pre class="download-cli__code"><code><span class="syntax syntax--prompt">$</span> <span class="syntax syntax--binary">curl</span> -L https://dl.glint3d.dev/install.sh | <span class="syntax syntax--binary">sh</span>
+<span class="syntax syntax--prompt">$</span> <span class="syntax syntax--binary">glint</span> <span class="syntax syntax--subcommand">login</span> <span class="syntax syntax--flag">--token</span> <span class="syntax syntax--value">xxxx-xxxx</span>
+<span class="syntax syntax--prompt">$</span> <span class="syntax syntax--binary">glint</span> <span class="syntax syntax--subcommand">render</span> <span class="syntax syntax--flag">--scene</span> <span class="syntax syntax--value">city.glb</span> <span class="syntax syntax--flag">--farm</span> <span class="syntax syntax--value">cluster-west</span></code></pre>
+            </div>
+        </section>
 
-                <div class="tab-content" id="macos-content">
-                    <h4>macOS Installation</h4>
-                    <ol>
-                        <li>Download the macOS DMG file</li>
-                        <li>Mount the DMG and drag Glint3D to Applications</li>
-                        <li>Allow the app in Security & Privacy settings if prompted</li>
-                        <li>Launch from Applications or use Terminal</li>
-                    </ol>
-
-                    <div class="code-block">
-<span class="terminal-prompt"># Add to PATH (Terminal)</span><br>
-echo 'export PATH="/Applications/Glint3D.app/Contents/MacOS:$PATH"' >> ~/.zshrc<br>
-source ~/.zshrc<br>
-<span class="terminal-prompt"># Verify installation</span><br>
-glint3d --version
+        <section class="download-section">
+            <div class="container">
+                <div class="download-meta">
+                    <div>
+                        <h3>System requirements</h3>
+                        <ul>
+                            <li>Quad-core CPU or better, 16 GB RAM minimum.</li>
+                            <li>Dedicated GPU with 6 GB VRAM (RTX 2060+/RX 5600 XT+/M-series).</li>
+                            <li>20 GB free storage for caches and AI models.</li>
+                        </ul>
                     </div>
-                </div>
-
-                <div class="tab-content" id="linux-content">
-                    <h4>Linux Installation</h4>
-                    <ol>
-                        <li>Download the Linux tarball (glint3d-linux-x64.tar.gz)</li>
-                        <li>Extract to /opt or your preferred location</li>
-                        <li>Make the binary executable</li>
-                        <li>Add to PATH for system-wide access</li>
-                    </ol>
-
-                    <div class="code-block">
-<span class="terminal-prompt"># Extract and install</span><br>
-sudo tar -xzf glint3d-linux-x64.tar.gz -C /opt/<br>
-sudo chmod +x /opt/glint3d/glint3d<br>
-<span class="terminal-prompt"># Add to PATH</span><br>
-echo 'export PATH="/opt/glint3d:$PATH"' >> ~/.bashrc<br>
-source ~/.bashrc<br>
-<span class="terminal-prompt"># Verify installation</span><br>
-glint3d --version
+                    <div>
+                        <h3>Support</h3>
+                        <p>Email <a href="mailto:support@glint3d.dev">support@glint3d.dev</a> for enterprise deployment help or to join the beta channel.</p>
+                        <p>Need custom integrations? Our automation team can tailor the rendering OS to your pipeline.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Support Section -->
-    <section class="support-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" style="color: white;">Need Help?</h2>
-                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Get support from our active community and comprehensive documentation</p>
-            </div>
-
-            <div class="support-grid">
-                <div class="support-item animate-on-scroll">
-                    <i class="fab fa-github"></i>
-                    <h4>GitHub Repository</h4>
-                    <p>Source code, issues, and releases</p>
-                    <a href="https://github.com/QuinnAho/Glint3D">
-                        Visit Repository <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-
-                <div class="support-item animate-on-scroll">
-                    <i class="fab fa-discord"></i>
-                    <h4>Discord Community</h4>
-                    <p>Live chat with 2,400+ developers</p>
-                    <a href="https://discord.gg/glint3d">
-                        Join Discord <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-
-                <div class="support-item animate-on-scroll">
-                    <i class="fas fa-book"></i>
-                    <h4>Documentation</h4>
-                    <p>Guides, tutorials, and API reference</p>
-                    <a href="resources.html">
-                        Read Docs <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-
-                <div class="support-item animate-on-scroll">
-                    <i class="fas fa-bug"></i>
-                    <h4>Report Issues</h4>
-                    <p>Found a bug? Let us know on GitHub</p>
-                    <a href="https://github.com/QuinnAho/Glint3D/issues">
-                        Report Bug <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>ImmersaLab</h3>
-                    <p>Building Glint3D—the Living Renderer that learns, adapts, and improves with every frame</p>
-                    <div class="footer-social">
-                        <a href="https://github.com/immersalab/glint3d" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://discord.gg/glint3d" aria-label="Discord">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                        <a href="https://twitter.com/immersalab" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Product</h4>
-                        <ul>
-                            <li><a href="product.html">Glint3D Engine</a></li>
-                            <li><a href="download.html">Download</a></li>
-                            <li><a href="resources.html">Documentation</a></li>
-                            <li><a href="demo.html">Web Demo</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Solutions</h4>
-                        <ul>
-                            <li><a href="solutions.html#product-viz">Product Visualization</a></li>
-                            <li><a href="solutions.html#synthetic-data">Synthetic Data</a></li>
-                            <li><a href="solutions.html#financial-viz">Financial Storytelling</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Community</h4>
-                        <ul>
-                            <li><a href="https://github.com/immersalab/glint3d">GitHub</a></li>
-                            <li><a href="https://discord.gg/glint3d">Discord</a></li>
-                            <li><a href="resources.html#contributing">Contributing</a></li>
-                            <li><a href="company.html#careers">Careers</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="company.html">About</a></li>
-                            <li><a href="company.html#careers">We're Hiring</a></li>
-                            <li><a href="mailto:hello@immersalab.com">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="footer__content container">
+            <div>
+                <p class="footer__brand">Glint3D</p>
+                <p class="footer__detail">A modern rendering OS engineered for creative teams and intelligent agents.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 ImmersaLab. Open source rendering for everyone. Licensed under MIT.</p>
+            <div class="footer__links">
+                <a class="footer__link" href="download.html">Get Glint3D</a>
+                <a class="footer__link" href="company.html">Team</a>
+                <a class="footer__link" href="mailto:hello@glint3d.dev">Contact</a>
+            </div>
+        </div>
+        <div class="footer__meta">
+            <div class="container">
+                <span>Copyright 2025 Glint3D Labs. All rights reserved.</span>
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script>
-        // Download page functionality
-        class DownloadPage {
-            constructor() {
-                this.init();
-            }
-
-            init() {
-                this.setupIntersectionObserver();
-                this.setupNavigation();
-                this.setupTabs();
-                this.setupCodeCopy();
-                this.setupAnalytics();
-            }
-
-            setupIntersectionObserver() {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('in-view');
-                        }
-                    });
-                }, observerOptions);
-
-                document.querySelectorAll('.animate-on-scroll').forEach(el => {
-                    observer.observe(el);
-                });
-            }
-
-            setupNavigation() {
-                const navToggle = document.querySelector('.nav-toggle');
-                const navMenu = document.querySelector('.nav-menu');
-
-                if (navToggle) {
-                    navToggle.addEventListener('click', () => {
-                        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-                        navToggle.setAttribute('aria-expanded', !isExpanded);
-                        navMenu.classList.toggle('active');
-                        document.body.classList.toggle('nav-open');
-                    });
-                }
-
-                // Track download clicks
-                document.querySelectorAll('.download-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        const platform = e.target.closest('.platform-card').querySelector('h3').textContent;
-                        this.trackEvent('download_click', {
-                            platform: platform.toLowerCase(),
-                            url: e.target.href
-                        });
-                    });
-                });
-
-                // Smooth scrolling
-                document.querySelectorAll('a[href^="#"]').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        const target = document.querySelector(link.getAttribute('href'));
-                        if (target) {
-                            e.preventDefault();
-                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    });
-                });
-            }
-
-            setupTabs() {
-                document.querySelectorAll('.tab-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const tabId = btn.dataset.tab;
-
-                        // Update active tab
-                        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-
-                        // Update active content
-                        document.querySelectorAll('.tab-content').forEach(content => {
-                            content.classList.remove('active');
-                        });
-                        document.getElementById(`${tabId}-content`).classList.add('active');
-
-                        this.trackEvent('installation_tab_click', { platform: tabId });
-                    });
-                });
-            }
-
-            setupCodeCopy() {
-                document.querySelectorAll('.code-block').forEach(block => {
-                    const copyBtn = document.createElement('button');
-                    copyBtn.className = 'copy-btn';
-                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
-                    copyBtn.setAttribute('aria-label', 'Copy code');
-
-                    copyBtn.addEventListener('click', async () => {
-                        try {
-                            const text = block.textContent.replace(/# [^\n]+/g, '').trim();
-                            await navigator.clipboard.writeText(text);
-                            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
-                            setTimeout(() => {
-                                copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
-                            }, 2000);
-                        } catch (err) {
-                            console.log('Copy failed:', err);
-                        }
-                    });
-
-                    block.style.position = 'relative';
-                    block.appendChild(copyBtn);
-                });
-            }
-
-            setupAnalytics() {
-                this.trackEvent('page_view', {
-                    page: 'download',
-                    timestamp: new Date().toISOString()
-                });
-
-                // Track scroll depth
-                let maxScrollDepth = 0;
-                window.addEventListener('scroll', () => {
-                    const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-                    if (scrollDepth > maxScrollDepth) {
-                        maxScrollDepth = scrollDepth;
-                        if (maxScrollDepth % 25 === 0) {
-                            this.trackEvent('scroll_depth', { depth: maxScrollDepth });
-                        }
-                    }
-                });
-            }
-
-            trackEvent(eventName, properties = {}) {
-                console.log('Analytics:', eventName, properties);
-                // Analytics implementation would go here
-            }
-        }
-
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            new DownloadPage();
-        });
-    </script>
 </body>
 </html>
