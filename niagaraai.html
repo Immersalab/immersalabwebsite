@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NiagaraAI - AI-Powered VFX Control for Unreal Engine</title>
+    <meta name="description" content="NiagaraAI is an Unreal Engine plugin that uses AI to dynamically modify Niagara system parameters in real time through natural language and Blueprint integration.">
+    <link rel="icon" type="image/png" href="Glint3DIcon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=8">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="site-brand" href="index.html" aria-label="ImmersaLab home">
+                <div class="logo-circle">
+                    <img class="logo-circle__img" src="Glint3DIcon.png" alt="ImmersaLab">
+                </div>
+            </a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a class="site-nav__link" href="niagaraai-docs.html">Docs</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="niagara-hero">
+            <div class="container">
+                <div class="niagara-hero__content">
+                    <h1 class="niagara-hero__title">NiagaraAI</h1>
+                    <p class="niagara-hero__subtitle">Control Unreal Engine VFX with Natural Language</p>
+                    <p class="niagara-hero__description">An AI-powered plugin that lets you modify Niagara particle systems in real time through natural language commands and Blueprint integration.</p>
+                    <div class="niagara-hero__actions">
+                        <a class="btn btn--primary" href="https://github.com/immersalab/AINiagaraFXPlugin" target="_blank">Get Plugin</a>
+                        <a class="btn btn--outline" href="niagaraai-docs.html">Read Docs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="niagara-demo">
+            <div class="container">
+                <h2 class="niagara-section-title">How It Works</h2>
+                <div class="niagara-demo-card">
+                    <div class="niagara-demo-example">
+                        <div class="niagara-demo-input">
+                            <span class="niagara-demo-label">Input:</span>
+                            <span class="niagara-demo-text">"Make the fire more intense"</span>
+                        </div>
+                        <div class="niagara-demo-arrow">↓</div>
+                        <div class="niagara-demo-output">
+                            <div class="niagara-demo-result">✓ Spawn rate increased to 150</div>
+                            <div class="niagara-demo-result">✓ Particle lifetime extended to 2.5s</div>
+                            <div class="niagara-demo-result">✓ Emissive strength boosted to 3.2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer__content container">
+            <div>
+                <p class="footer__brand">ImmersaLab</p>
+                <p class="footer__detail">Next-gen graphics company building the future of game engines and immersive experiences.</p>
+            </div>
+            <div class="footer__links">
+                <a class="footer__link" href="glint3d.html">Glint3D</a>
+                <a class="footer__link" href="niagaraai.html">NiagaraAI</a>
+                <a class="footer__link" href="about.html">About</a>
+                <a class="footer__link" href="mailto:hello@glint3d.dev">Contact</a>
+            </div>
+        </div>
+        <div class="footer__meta">
+            <div class="container">
+                <span>Copyright 2025 ImmersaLab. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+<script>
+// Set theme BEFORE scripts load
+const currentTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
+</script>
+<script>
+// Theme toggle functionality
+const themeToggle = document.getElementById('themeToggle');
+const sunIcon = document.querySelector('.sun-icon');
+const moonIcon = document.querySelector('.moon-icon');
+const html = document.documentElement;
+
+// Update icon visibility based on current theme
+if (currentTheme === 'dark') {
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+}
+
+themeToggle.addEventListener('click', () => {
+    const theme = html.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+
+    localStorage.setItem('theme', newTheme);
+
+    // Reload page to reinitialize with new theme
+    window.location.reload();
+});
+</script>
+</body>
+</html>

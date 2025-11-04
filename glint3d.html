@@ -17,16 +17,30 @@
     <header class="site-header">
         <div class="site-header__inner container">
             <a class="site-brand" href="index.html" aria-label="ImmersaLab home">
-                <img class="site-brand__logo" src="Glint3DIcon.png" alt="" aria-hidden="true">
-                <span class="site-brand__text">immersalab_</span><span class="site-brand__cursor" aria-hidden="true"></span>
+                <div class="logo-circle">
+                    <img class="logo-circle__img" src="Glint3DIcon.png" alt="ImmersaLab">
+                </div>
             </a>
             <nav class="site-nav" aria-label="Primary navigation">
-                <a class="site-nav__link" href="glint3d.html">Glint3D</a>
-                <a class="site-nav__link" href="company.html">Team</a>
                 <a class="site-nav__link" href="download.html">Download</a>
-                <a class="site-nav__link" href="mailto:hello@glint3d.dev">Contact</a>
+                <a class="site-nav__link" href="docs.html">Docs</a>
             </nav>
-            <a class="btn btn--ghost" href="download.html">Get Glint3D</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -51,12 +65,12 @@
                         <div class="hero__intro">
                             <div class="terminal-line">
                                 <span class="prompt">$</span>
-                                <span class="command">cat</span>
+                                <span class="subcommand">cat</span>
                                 <span class="arg">README.md</span>
                             </div>
                             <div class="terminal-output">
-                                <h1 class="hero__title">Render intelligence into every frame.</h1>
-                                <p class="hero__description">AI-native rendering OS for next-gen creative teams. Glint3D coordinates GPU clusters, adaptive sampling, and versioned assets through a single automation layer built for studios, developers, and autonomous agents.</p>
+                                <h1 class="hero__title">A rendering platform for everyone</h1>
+                                <p class="hero__description">Glint3D is a modern rendering platform built to support artists, developers, and AI agents. Create visually, automate with code, and build your own intelligent rendering workflows — all in one environment. Use it like a creative tool, drive it like a development platform, and extend it as your needs grow.</p>
                             </div>
                         </div>
 
@@ -70,15 +84,19 @@
                                 <ul class="feature-list">
                                     <li>
                                         <span class="feature-icon">→</span>
-                                        <span>Autonomous job routing with live health checks and retry logic</span>
+                                        <span>Programmable Core — Script cameras, lights, materials, and passes</span>
                                     </li>
                                     <li>
                                         <span class="feature-icon">→</span>
-                                        <span>Versioned asset pipeline with audit-ready render history</span>
+                                        <span>Automation Ready — Headless mode, task graphs, and deterministic outputs</span>
                                     </li>
                                     <li>
                                         <span class="feature-icon">→</span>
-                                        <span>Adaptive sampling tuned by reinforcement learning feedback</span>
+                                        <span>AI-Controllable — Stable command interface for agents and tools</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">→</span>
+                                        <span>Modern Engine — GPU accelerated with modular RHI and splat workflows</span>
                                     </li>
                                 </ul>
                             </div>
@@ -89,27 +107,41 @@
                                 <span class="prompt">$</span>
                                 <span class="command">glint</span>
                                 <span class="subcommand">render</span>
-                                <span class="flag">--scene</span>
-                                <span class="value">orbital_station.glb</span>
+                                <span class="arg">scene.glb</span>
                                 <span class="flag">--profile</span>
                                 <span class="value">cinematic</span>
                             </div>
                             <div class="terminal-output terminal-output--log">
-                                <div class="log-line">
-                                    <span class="log-prefix">[engine]</span>
-                                    <span>booting Glint3D rendering OS...</span>
-                                </div>
-                                <div class="log-line">
-                                    <span class="log-prefix">[cluster]</span>
-                                    <span>16 GPU nodes synced | ai co-pilot ready</span>
-                                </div>
-                                <div class="log-line">
-                                    <span class="log-prefix">[optimizer]</span>
-                                    <span>adaptive sampling engaged (reinforcement tuned)</span>
-                                </div>
                                 <div class="log-line log-line--success">
                                     <span class="log-icon">✔</span>
-                                    <span>render session online — monitoring enabled</span>
+                                    <span>output: ./renders/frame_001.png</span>
+                                </div>
+                            </div>
+
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">glint</span>
+                                <span class="subcommand">ops</span>
+                                <span class="arg">apply</span>
+                                <span class="value">lighting/moody.ops</span>
+                            </div>
+                            <div class="terminal-output terminal-output--log">
+                                <div class="log-line log-line--success">
+                                    <span class="log-icon">✔</span>
+                                    <span>scene updated</span>
+                                </div>
+                            </div>
+
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">glint</span>
+                                <span class="subcommand">run</span>
+                                <span class="arg">batch.ops</span>
+                            </div>
+                            <div class="terminal-output terminal-output--log">
+                                <div class="log-line log-line--success">
+                                    <span class="log-icon">✔</span>
+                                    <span>completed | outputs in ./renders/</span>
                                 </div>
                             </div>
                         </div>
@@ -122,11 +154,11 @@
                             <div class="action-buttons">
                                 <a class="btn btn--primary" href="download.html">
                                     <span>→</span>
-                                    <span>Get Glint3D</span>
+                                    <span>Download</span>
                                 </a>
-                                <a class="btn btn--outline" href="mailto:hello@glint3d.dev?subject=Glint3D%20Demo">
-                                    <span>↗</span>
-                                    <span>Request Demo</span>
+                                <a class="btn btn--outline" href="docs.html">
+                                    <span>→</span>
+                                    <span>Read Docs</span>
                                 </a>
                             </div>
                         </div>
@@ -144,7 +176,6 @@
             </div>
             <div class="footer__links">
                 <a class="footer__link" href="download.html">Download</a>
-                <a class="footer__link" href="company.html">Team</a>
                 <a class="footer__link" href="mailto:hello@glint3d.dev">Contact</a>
             </div>
         </div>
@@ -154,5 +185,39 @@
             </div>
         </div>
     </footer>
+<script>
+// Theme toggle functionality
+const themeToggle = document.getElementById('themeToggle');
+const sunIcon = document.querySelector('.sun-icon');
+const moonIcon = document.querySelector('.moon-icon');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to 'light'
+const currentTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', currentTheme);
+
+// Update icon visibility based on current theme
+if (currentTheme === 'dark') {
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+}
+
+themeToggle.addEventListener('click', () => {
+    const theme = html.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    // Toggle icon visibility
+    if (newTheme === 'dark') {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+    } else {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+    }
+});
+</script>
 </body>
 </html>

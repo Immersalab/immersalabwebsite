@@ -23,25 +23,10 @@
             </a>
             <nav class="site-nav" aria-label="Primary navigation">
                 <a class="site-nav__link" href="glint3d.html">Glint3D</a>
-                <a class="site-nav__link" href="niagaraai.html">NiagaraAI</a>
-                <a class="site-nav__link" href="about.html">About</a>
+                <a class="site-nav__link" href="download.html">Download</a>
+                <a class="site-nav__link" href="mailto:hello@glint3d.dev">Contact</a>
             </nav>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="5"/>
-                    <line x1="12" y1="1" x2="12" y2="3"/>
-                    <line x1="12" y1="21" x2="12" y2="23"/>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                    <line x1="1" y1="12" x2="3" y2="12"/>
-                    <line x1="21" y1="12" x2="23" y2="12"/>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                </svg>
-                <svg class="moon-icon" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-            </button>
+            <a class="btn btn--ghost" href="#contact">Work With Us</a>
         </div>
     </header>
 
@@ -55,7 +40,7 @@
                         <p class="immersalab-hero__tagline">A next-gen creative lab building the future of graphics and immersive experiences.</p>
 
                         <div class="glint-highlight">
-                            <h2 class="glint-highlight__title">Glint3D✨</h2>
+                            <h2 class="glint-highlight__title">Glint3D</h2>
                             <p class="glint-highlight__description">
                                 A renderer built for humans and machines alike. Infinite scalability and AI control at your fingertips. The possibilities to build with Glint are endless—from automated render farms to intelligent production pipelines.
                             </p>
@@ -64,31 +49,29 @@
                     </div>
 
                     <div class="immersalab-hero__visual">
-                        <div class="hero-video-shell">
-                            <div class="hero-video-grid">
-                                <div class="hero-video-card hero-video-card--large">
-                                    <video autoplay loop muted playsinline class="hero-video">
-                                        <source src="WebGolemsCurse.mp4" type="video/mp4">
-                                    </video>
-                                    <div class="hero-video-overlay">
-                                        <span class="hero-video-label">Game Development</span>
-                                    </div>
+                        <div class="hero-video-grid">
+                            <div class="hero-video-card hero-video-card--large">
+                                <video autoplay loop muted playsinline class="hero-video">
+                                    <source src="WebGolemsCurse.mp4" type="video/mp4">
+                                </video>
+                                <div class="hero-video-overlay">
+                                    <span class="hero-video-label">Game Development</span>
                                 </div>
-                                <div class="hero-video-card">
-                                    <video autoplay loop muted playsinline class="hero-video">
-                                        <source src="WebVRPreview.mp4" type="video/mp4">
-                                    </video>
-                                    <div class="hero-video-overlay">
-                                        <span class="hero-video-label">AR/VR</span>
-                                    </div>
+                            </div>
+                            <div class="hero-video-card">
+                                <video autoplay loop muted playsinline class="hero-video">
+                                    <source src="WebVRPreview.mp4" type="video/mp4">
+                                </video>
+                                <div class="hero-video-overlay">
+                                    <span class="hero-video-label">AR/VR</span>
                                 </div>
-                                <div class="hero-video-card">
-                                    <video autoplay loop muted playsinline class="hero-video">
-                                        <source src="WebNarration.mp4" type="video/mp4">
-                                    </video>
-                                    <div class="hero-video-overlay">
-                                        <span class="hero-video-label">AI Animation</span>
-                                    </div>
+                            </div>
+                            <div class="hero-video-card">
+                                <video autoplay loop muted playsinline class="hero-video">
+                                    <source src="WebNarration.mp4" type="video/mp4">
+                                </video>
+                                <div class="hero-video-overlay">
+                                    <span class="hero-video-label">AI Animation</span>
                                 </div>
                             </div>
                         </div>
@@ -143,38 +126,10 @@
               <a class="link" id="google_link" target="_blank"></a>
             </div>
           </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<script>
-// Set theme BEFORE fluid sim loads
-const currentTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', currentTheme);
-</script>
-<script src="fluid-sim.js"></script>
-<script>
-// Theme toggle functionality
-const themeToggle = document.getElementById('themeToggle');
-const sunIcon = document.querySelector('.sun-icon');
-const moonIcon = document.querySelector('.moon-icon');
-const html = document.documentElement;
-
-// Update icon visibility based on current theme
-if (currentTheme === 'dark') {
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
-}
-
-themeToggle.addEventListener('click', () => {
-    const theme = html.getAttribute('data-theme');
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-
-    localStorage.setItem('theme', newTheme);
-
-    // Reload page to reinitialize fluid sim with new background color
-    window.location.reload();
-});
-</script>
+    <script src="fluid-sim.js"></script>
 </body>
 </html>

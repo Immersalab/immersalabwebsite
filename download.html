@@ -17,130 +17,76 @@
     <header class="site-header">
         <div class="site-header__inner container">
             <a class="site-brand" href="index.html" aria-label="ImmersaLab home">
-                <img class="site-brand__logo" src="Glint3DIcon.png" alt="" aria-hidden="true">
-                <span class="site-brand__text">immersalab</span><span class="site-brand__cursor" aria-hidden="true"></span>
+                <div class="logo-circle">
+                    <img class="logo-circle__img" src="Glint3DIcon.png" alt="ImmersaLab">
+                </div>
             </a>
             <nav class="site-nav" aria-label="Primary navigation">
-                <a class="site-nav__link" href="company.html">Team</a>
-                <a class="site-nav__link" href="download.html" aria-current="page">Download</a>
-                <a class="site-nav__link" href="mailto:hello@glint3d.dev">Contact</a>
+                <a class="site-nav__link" href="download.html">Download</a>
+                <a class="site-nav__link" href="docs.html">Docs</a>
             </nav>
-            <a class="btn btn--ghost" href="download.html" aria-current="page">Get Glint3D</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
         </div>
     </header>
 
     <main id="main">
         <section class="download-hero">
-            <div class="download-hero__layout container">
-                <div class="download-hero__copy">
-                    <p class="download-hero__eyebrow">Install today</p>
-                    <h1 class="download-hero__title">Bring the rendering OS to your pipeline.</h1>
-                    <p class="download-hero__lead">
-                        Choose a ready-to-run desktop build or integrate Glint3D through Docker and CLI-first workflows. Every release includes GPU-aware orchestration, automation hooks, and AI copilots out of the box.
-                    </p>
-                    <div class="download-hero__actions">
-                        <a class="btn btn--primary" href="#desktop">Desktop installers</a>
-                        <a class="btn btn--outline" href="#cli">CLI & Docker</a>
-                    </div>
-                    <p class="download-hero__note">Latest release: v0.9.4 • Updated weekly with hotfixes and device packs.</p>
-                </div>
-                <div class="download-hero__panel" aria-hidden="true">
-                    <div class="download-release-card">
-                        <header class="download-release-card__header">
-                            <span class="download-release-card__tag">release v0.9.4</span>
-                            <span class="download-release-card__date">published 3 days ago</span>
-                        </header>
-                        <ul class="download-release-card__list">
-                            <li>⚡ Adaptive sampler speedups for RTX 40-series.</li>
-                            <li>🤖 New AI co-pilot tasks for animation and lighting.</li>
-                            <li>🌐 Headless mode for distributed render farms.</li>
-                        </ul>
-                        <div class="download-release-card__footer">
-                            <span>Checksum: 9f3a8d/glint3d/0.9.4</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="container">
+                <h1 class="download-hero__title">Download Glint3D</h1>
+                <p class="download-hero__lead">Get started with the AI-native rendering OS.</p>
             </div>
         </section>
 
         <section class="download-section" id="desktop">
             <div class="container">
-                <header class="download-section__header">
-                    <h2>Desktop installers</h2>
-                    <p>Signed builds with GPU drivers tuned for workstation and studio deployment.</p>
-                </header>
                 <div class="download-grid">
                     <article class="download-card">
-                        <h3>Windows 11 / 10</h3>
-                        <p>Installer with DirectX + Vulkan backends, optional CUDA extensions, and auto-update service.</p>
-                        <ul>
-                            <li>Supports NVIDIA, AMD, Intel ARC.</li>
-                            <li>Installs background orchestrator for job queuing.</li>
-                            <li>Includes Visual Studio redistributables.</li>
-                        </ul>
-                        <a class="btn btn--primary" href="#">Download .msi</a>
+                        <div class="download-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"/>
+                                <rect x="14" y="3" width="7" height="7"/>
+                                <rect x="14" y="14" width="7" height="7"/>
+                                <rect x="3" y="14" width="7" height="7"/>
+                            </svg>
+                        </div>
+                        <h3>Windows</h3>
+                        <a class="btn btn--primary" href="#">Download</a>
                     </article>
                     <article class="download-card">
-                        <h3>macOS (Apple Silicon)</h3>
-                        <p>Universal build optimized for M-series GPUs with Metal acceleration and offline RayKit.</p>
-                        <ul>
-                            <li>macOS 13 Ventura or newer.</li>
-                            <li>Native arm64 binary; Intel fallback via Rosetta.</li>
-                            <li>Ships with CLI and automation scripts.</li>
-                        </ul>
-                        <a class="btn btn--primary" href="#">Download .dmg</a>
+                        <div class="download-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>macOS</h3>
+                        <a class="btn btn--primary" href="#">Download</a>
                     </article>
                     <article class="download-card">
-                        <h3>Linux (Ubuntu / Fedora)</h3>
-                        <p>AppImage plus shell scripts for systemd services, focused on render farm orchestration.</p>
-                        <ul>
-                            <li>GLIBC 2.31+, kernel 5.15+.</li>
-                            <li>Supports NVIDIA and Mesa-based drivers.</li>
-                            <li>Includes Docker compose stack and CLI.</li>
-                        </ul>
-                        <a class="btn btn--primary" href="#">Download AppImage</a>
+                        <div class="download-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2v20M2 12h20"/>
+                            </svg>
+                        </div>
+                        <h3>Linux</h3>
+                        <a class="btn btn--primary" href="#">Download</a>
                     </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="download-section" id="cli">
-            <div class="container download-cli">
-                <div class="download-cli__copy">
-                    <h2>CLI & Docker</h2>
-                    <p>Roll Glint3D into CI pipelines, headless render farms, and AI-driven workflows.</p>
-                    <ul>
-                        <li>CLI shipped as `glint` for Windows, macOS, and Linux.</li>
-                        <li>Docker images include GPU drivers, scheduler, and observability stack.</li>
-                        <li>API tokens with granular scopes for automation agents.</li>
-                    </ul>
-                    <div class="download-cli__links">
-                        <a class="btn btn--outline" href="#">Pull Docker image</a>
-                        <a class="btn btn--outline" href="#">Read CLI docs</a>
-                    </div>
-                </div>
-                <pre class="download-cli__code"><code><span class="syntax syntax--prompt">$</span> <span class="syntax syntax--binary">curl</span> -L https://dl.glint3d.dev/install.sh | <span class="syntax syntax--binary">sh</span>
-<span class="syntax syntax--prompt">$</span> <span class="syntax syntax--binary">glint</span> <span class="syntax syntax--subcommand">login</span> <span class="syntax syntax--flag">--token</span> <span class="syntax syntax--value">xxxx-xxxx</span>
-<span class="syntax syntax--prompt">$</span> <span class="syntax syntax--binary">glint</span> <span class="syntax syntax--subcommand">render</span> <span class="syntax syntax--flag">--scene</span> <span class="syntax syntax--value">city.glb</span> <span class="syntax syntax--flag">--farm</span> <span class="syntax syntax--value">cluster-west</span></code></pre>
-            </div>
-        </section>
-
-        <section class="download-section">
-            <div class="container">
-                <div class="download-meta">
-                    <div>
-                        <h3>System requirements</h3>
-                        <ul>
-                            <li>Quad-core CPU or better, 16 GB RAM minimum.</li>
-                            <li>Dedicated GPU with 6 GB VRAM (RTX 2060+/RX 5600 XT+/M-series).</li>
-                            <li>20 GB free storage for caches and AI models.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Support</h3>
-                        <p>Email <a href="mailto:support@glint3d.dev">support@glint3d.dev</a> for enterprise deployment help or to join the beta channel.</p>
-                        <p>Need custom integrations? Our automation team can tailor the rendering OS to your pipeline.</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -154,7 +100,6 @@
             </div>
             <div class="footer__links">
                 <a class="footer__link" href="download.html">Get Glint3D</a>
-                <a class="footer__link" href="company.html">Team</a>
                 <a class="footer__link" href="mailto:hello@glint3d.dev">Contact</a>
             </div>
         </div>
@@ -164,5 +109,39 @@
             </div>
         </div>
     </footer>
+<script>
+// Theme toggle functionality
+const themeToggle = document.getElementById('themeToggle');
+const sunIcon = document.querySelector('.sun-icon');
+const moonIcon = document.querySelector('.moon-icon');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to 'light'
+const currentTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', currentTheme);
+
+// Update icon visibility based on current theme
+if (currentTheme === 'dark') {
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+}
+
+themeToggle.addEventListener('click', () => {
+    const theme = html.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    // Toggle icon visibility
+    if (newTheme === 'dark') {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+    } else {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+    }
+});
+</script>
 </body>
 </html>
