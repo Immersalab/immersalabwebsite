@@ -1015,6 +1015,7 @@ a:focus-visible,
   box-shadow: 0 24px 44px rgba(30, 41, 59, 0.15);
   max-width: 900px;
   margin: 0 auto;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .niagara-hero__content {
@@ -1027,10 +1028,10 @@ a:focus-visible,
   font-weight: 700;
   background: linear-gradient(
     135deg,
-    var(--color-primary),
-    var(--color-secondary),
-    var(--color-primary),
-    var(--color-secondary)
+    #0066ff,
+    #a855f7,
+    #0066ff,
+    #a855f7
   );
   background-size: 300% 300%;
   -webkit-background-clip: text;
@@ -1150,10 +1151,10 @@ a:focus-visible,
 [data-theme="dark"] .niagara-hero__title {
   background: linear-gradient(
     135deg,
-    #4d9aff,
-    #c084fc,
-    #4d9aff,
-    #c084fc
+    #0080ff,
+    #9333ea,
+    #0080ff,
+    #9333ea
   );
   background-size: 300% 300%;
   -webkit-background-clip: text;
