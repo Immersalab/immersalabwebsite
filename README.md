@@ -1,10 +1,10 @@
-# ImmersaLab Website
+# Immersalab Website
 
-Official website for **ImmersaLab** — a creative lab building the future of graphics and immersive experiences through [Glint3D](https://github.com/QuinnAho/Glint3D), the living renderer.
+Official website for **Immersalab** — a creative lab building the future of graphics and immersive experiences through [Glint3D](https://github.com/QuinnAho/Glint3D), the living renderer.
 
 ## Overview
 
-This repository contains the marketing site for ImmersaLab and Glint3D, showcasing our rendering technology, product vision, and team.
+This repository contains the marketing site for Immersalab and Glint3D, showcasing our rendering technology, product vision, and team.
 
 ## What's Inside
 
@@ -86,11 +86,11 @@ npx serve
 
 ## Contributing
 
-This is the official ImmersaLab website repository. For issues or suggestions, please open an issue.
+This is the official Immersalab website repository. For issues or suggestions, please open an issue.
 
 ## License
 
-© 2024 ImmersaLab. All rights reserved.
+© 2024 Immersalab. All rights reserved.
 
 ---
 
