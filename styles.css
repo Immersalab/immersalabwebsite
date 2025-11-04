@@ -1197,7 +1197,7 @@ a:focus-visible,
   grid-template-columns: 1fr 1fr;
   gap: clamp(3rem, 6vw, 5rem);
   align-items: center;
-  transition: box-shadow 0.6s ease, border-color 0.6s ease;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .immersalab-hero__wrapper::before {
@@ -1231,7 +1231,10 @@ a:focus-visible,
 
 .immersalab-hero__wrapper:hover {
   border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 32px 66px rgba(30, 41, 59, 0.16);
+  box-shadow:
+    0 32px 66px rgba(30, 41, 59, 0.16),
+    0 0 60px rgba(77, 154, 255, 0.4),
+    0 0 100px rgba(168, 85, 247, 0.3);
 }
 
 .immersalab-hero__content {
@@ -1415,7 +1418,10 @@ a:focus-visible,
 
 .hero-video-shell:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.15),
+    0 0 40px rgba(77, 154, 255, 0.35),
+    0 0 80px rgba(168, 85, 247, 0.25);
 }
 
 .hero-video-grid {
@@ -1757,6 +1763,14 @@ a:focus-visible,
 [data-theme="dark"] .immersalab-hero__wrapper {
   background: rgba(30, 30, 30, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .immersalab-hero__wrapper:hover {
+  box-shadow:
+    0 32px 66px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(77, 154, 255, 0.5),
+    0 0 120px rgba(168, 85, 247, 0.4);
 }
 
 [data-theme="dark"] .hero-video-card {
@@ -1771,7 +1785,10 @@ a:focus-visible,
 }
 
 [data-theme="dark"] .hero-video-shell:hover {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.8),
+    0 0 50px rgba(77, 154, 255, 0.5),
+    0 0 100px rgba(168, 85, 247, 0.4);
 }
 
 [data-theme="dark"] .download-card {
