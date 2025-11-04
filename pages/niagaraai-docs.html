@@ -191,15 +191,12 @@
         </div>
     </footer>
 <script>
-// Set theme BEFORE scripts load
-// Check if returning from NiagaraAI page
-const previousTheme = localStorage.getItem('previousTheme');
-if (previousTheme) {
-    localStorage.setItem('theme', previousTheme);
-    localStorage.removeItem('previousTheme');
+// Save current theme and force dark mode for NiagaraAI docs page
+const previousTheme = localStorage.getItem('theme') || 'light';
+if (previousTheme !== 'dark') {
+    localStorage.setItem('previousTheme', previousTheme);
 }
-const currentTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', currentTheme);
+document.documentElement.setAttribute('data-theme', 'dark');
 </script>
 <script>
 // Theme toggle functionality
@@ -208,11 +205,9 @@ const sunIcon = document.querySelector('.sun-icon');
 const moonIcon = document.querySelector('.moon-icon');
 const html = document.documentElement;
 
-// Update icon visibility based on current theme
-if (currentTheme === 'dark') {
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
-}
+// Set icon to dark mode
+sunIcon.style.display = 'none';
+moonIcon.style.display = 'block';
 
 themeToggle.addEventListener('click', () => {
     const theme = html.getAttribute('data-theme');

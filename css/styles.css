@@ -1018,6 +1018,15 @@ a:focus-visible,
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.niagara-hero__glass-box:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-8px);
+  box-shadow:
+    0 32px 66px rgba(30, 41, 59, 0.16),
+    0 0 60px rgba(77, 154, 255, 0.3),
+    0 0 100px rgba(168, 85, 247, 0.25);
+}
+
 .niagara-hero__content {
   position: relative;
 }
@@ -1070,82 +1079,19 @@ a:focus-visible,
   justify-content: center;
 }
 
-.niagara-section-title {
-  margin: 0 0 3rem;
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
-  text-align: center;
-  color: var(--color-text);
-}
-
-.niagara-demo {
-  padding: clamp(4rem, 8vw, 6rem) 0;
-  background: var(--color-surface-muted);
-}
-
-.niagara-demo-card {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 3rem 2.5rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
-
-.niagara-demo-example {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.niagara-demo-input {
-  padding: 1.5rem;
-  background: var(--color-surface-muted);
-  border-radius: var(--radius-md);
-  font-family: var(--font-mono);
-}
-
-.niagara-demo-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-text-muted);
-}
-
-.niagara-demo-text {
-  font-size: 1.1rem;
-  color: var(--color-primary);
-  font-weight: 500;
-}
-
-.niagara-demo-arrow {
-  text-align: center;
-  font-size: 2rem;
-  color: var(--color-text-muted);
-}
-
-.niagara-demo-output {
-  padding: 1.5rem;
-  background: var(--color-surface-muted);
-  border-radius: var(--radius-md);
-}
-
-.niagara-demo-result {
-  padding: 0.75rem 0;
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
-  color: #28ca42;
-}
-
 /* Dark mode NiagaraAI */
 [data-theme="dark"] .niagara-hero__glass-box {
   background: rgba(30, 30, 30, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 24px 44px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .niagara-hero__glass-box:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 32px 66px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(77, 154, 255, 0.4),
+    0 0 120px rgba(168, 85, 247, 0.35);
 }
 
 [data-theme="dark"] .niagara-hero__title {
@@ -1160,11 +1106,6 @@ a:focus-visible,
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-[data-theme="dark"] .niagara-demo-card {
-  background: var(--color-surface);
-  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Footer */
@@ -1815,10 +1756,14 @@ a:focus-visible,
 [data-theme="dark"] .logo-circle {
   background: rgba(30, 30, 30, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-[data-theme="dark"] .logo-circle:hover {
+[data-theme="dark"] .site-brand:hover .logo-circle {
   background: rgba(40, 40, 40, 0.85);
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(77, 154, 255, 0.2);
 }
 
 [data-theme="dark"] .btn--ghost {
