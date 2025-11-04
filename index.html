@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ImmersaLab - Next-Gen Graphics & Game Engine Development</title>
     <meta name="description" content="ImmersaLab builds AI-powered tools for game engines, creates immersive AR/VR experiences, and provides graphics consulting for film and game development.">
-    <link rel="icon" type="image/png" href="Glint3DIcon.png">
+    <link rel="icon" type="image/png" href="assets/images/Glint3DIcon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="css/styles.css?v=8">
 </head>
 <body>
     <header class="site-header">
         <div class="site-header__inner container">
             <a class="site-brand" href="index.html" aria-label="ImmersaLab home">
                 <div class="logo-circle">
-                    <img class="logo-circle__img" src="Glint3DIcon.png" alt="ImmersaLab">
+                    <img class="logo-circle__img" src="assets/images/Glint3DIcon.png" alt="ImmersaLab">
                 </div>
             </a>
             <nav class="site-nav" aria-label="Primary navigation">
-                <a class="site-nav__link" href="glint3d.html">Glint3D</a>
-                <a class="site-nav__link" href="niagaraai.html">NiagaraAI</a>
-                <a class="site-nav__link" href="about.html">About</a>
+                <a class="site-nav__link" href="pages/glint3d.html">Glint3D</a>
+                <a class="site-nav__link" href="pages/niagaraai.html">NiagaraAI</a>
+                <a class="site-nav__link" href="pages/about.html">About</a>
             </nav>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                 <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@
                             <div class="hero-video-grid">
                                 <div class="hero-video-card hero-video-card--large">
                                     <video autoplay loop muted playsinline class="hero-video">
-                                        <source src="WebGolemsCurse.mp4" type="video/mp4">
+                                        <source src="assets/videos/WebGolemsCurse.mp4" type="video/mp4">
                                     </video>
                                     <div class="hero-video-overlay">
                                         <span class="hero-video-label">Game Development</span>
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="hero-video-card">
                                     <video autoplay loop muted playsinline class="hero-video">
-                                        <source src="WebVRPreview.mp4" type="video/mp4">
+                                        <source src="assets/videos/WebVRPreview.mp4" type="video/mp4">
                                     </video>
                                     <div class="hero-video-overlay">
                                         <span class="hero-video-label">AR/VR</span>
@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="hero-video-card">
                                     <video autoplay loop muted playsinline class="hero-video">
-                                        <source src="WebNarration.mp4" type="video/mp4">
+                                        <source src="assets/videos/WebNarration.mp4" type="video/mp4">
                                     </video>
                                     <div class="hero-video-overlay">
                                         <span class="hero-video-label">AI Animation</span>
@@ -119,7 +119,7 @@
                 <p class="footer__detail">Next-gen graphics company building the future of game engines and immersive experiences.</p>
             </div>
             <div class="footer__links">
-                <a class="footer__link" href="glint3d.html">Glint3D</a>
+                <a class="footer__link" href="pages/glint3d.html">Glint3D</a>
                 <a class="footer__link" href="mailto:hello@glint3d.dev">Contact</a>
             </div>
         </div>
@@ -149,10 +149,16 @@
 
 <script>
 // Set theme BEFORE fluid sim loads
+// Check if returning from NiagaraAI page
+const previousTheme = localStorage.getItem('previousTheme');
+if (previousTheme) {
+    localStorage.setItem('theme', previousTheme);
+    localStorage.removeItem('previousTheme');
+}
 const currentTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', currentTheme);
 </script>
-<script src="fluid-sim.js"></script>
+<script src="js/fluid-sim.js"></script>
 <script>
 // Theme toggle functionality
 const themeToggle = document.getElementById('themeToggle');

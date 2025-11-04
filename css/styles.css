@@ -972,23 +972,73 @@ a:focus-visible,
 
 /* NiagaraAI Page */
 .niagara-hero {
+  position: relative;
   padding: clamp(6rem, 12vw, 10rem) 0 clamp(4rem, 8vw, 6rem);
   text-align: center;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  margin-top: -90px;
+  padding-top: calc(clamp(6rem, 12vw, 10rem) + 90px);
+}
+
+.niagara-hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.niagara-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.niagara-hero__glass-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(32px) saturate(170%);
+  -webkit-backdrop-filter: blur(32px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-lg);
+  padding: clamp(2.5rem, 4vw, 3.5rem);
+  box-shadow: 0 24px 44px rgba(30, 41, 59, 0.15);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .niagara-hero__content {
-  max-width: 800px;
-  margin: 0 auto;
+  position: relative;
 }
 
 .niagara-hero__title {
   margin: 0 0 1rem;
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 700;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .niagara-hero__subtitle {
@@ -1084,8 +1134,21 @@ a:focus-visible,
 }
 
 /* Dark mode NiagaraAI */
+[data-theme="dark"] .niagara-hero__glass-box {
+  background: rgba(30, 30, 30, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.4);
+}
+
 [data-theme="dark"] .niagara-hero__title {
-  background: linear-gradient(135deg, #4d9aff, #c084fc);
+  background: linear-gradient(
+    135deg,
+    #4d9aff,
+    #c084fc,
+    #4d9aff,
+    #c084fc
+  );
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -11,14 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="../css/styles.css?v=8">
 </head>
 <body>
     <header class="site-header">
         <div class="site-header__inner container">
-            <a class="site-brand" href="index.html" aria-label="ImmersaLab home">
+            <a class="site-brand" href="../index.html" aria-label="ImmersaLab home">
                 <div class="logo-circle">
-                    <img class="logo-circle__img" src="Glint3DIcon.png" alt="ImmersaLab">
+                    <img class="logo-circle__img" src="../assets/images/Glint3DIcon.png" alt="ImmersaLab">
                 </div>
             </a>
             <nav class="site-nav" aria-label="Primary navigation">
@@ -184,6 +184,12 @@ cd my-project</code></pre>
     </footer>
 <script>
 // Set theme BEFORE scripts load
+// Check if returning from NiagaraAI page
+const previousTheme = localStorage.getItem('previousTheme');
+if (previousTheme) {
+    localStorage.setItem('theme', previousTheme);
+    localStorage.removeItem('previousTheme');
+}
 const currentTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', currentTheme);
 </script>

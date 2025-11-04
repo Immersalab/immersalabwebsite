@@ -11,14 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="../css/styles.css?v=8">
 </head>
 <body>
     <header class="site-header">
         <div class="site-header__inner container">
-            <a class="site-brand" href="index.html" aria-label="ImmersaLab home">
+            <a class="site-brand" href="../index.html" aria-label="ImmersaLab home">
                 <div class="logo-circle">
-                    <img class="logo-circle__img" src="Glint3DIcon.png" alt="ImmersaLab">
+                    <img class="logo-circle__img" src="../assets/images/Glint3DIcon.png" alt="ImmersaLab">
                 </div>
             </a>
             <nav class="site-nav" aria-label="Primary navigation">
@@ -46,14 +46,19 @@
 
     <main id="main">
         <section class="niagara-hero">
+            <video class="niagara-hero__video" autoplay loop muted playsinline>
+                <source src="../assets/videos/WebGolemsCurse.mp4" type="video/mp4">
+            </video>
             <div class="container">
-                <div class="niagara-hero__content">
-                    <h1 class="niagara-hero__title">NiagaraAI</h1>
-                    <p class="niagara-hero__subtitle">Control Unreal Engine VFX with Natural Language</p>
-                    <p class="niagara-hero__description">An AI-powered plugin that lets you modify Niagara particle systems in real time through natural language commands and Blueprint integration.</p>
-                    <div class="niagara-hero__actions">
-                        <a class="btn btn--primary" href="https://github.com/immersalab/AINiagaraFXPlugin" target="_blank">Get Plugin</a>
-                        <a class="btn btn--outline" href="niagaraai-docs.html">Read Docs</a>
+                <div class="niagara-hero__glass-box">
+                    <div class="niagara-hero__content">
+                        <h1 class="niagara-hero__title">NiagaraAI</h1>
+                        <p class="niagara-hero__subtitle">Control Unreal Engine VFX with Natural Language</p>
+                        <p class="niagara-hero__description">An AI-powered plugin that lets you modify Niagara particle systems in real time through natural language commands and Blueprint integration.</p>
+                        <div class="niagara-hero__actions">
+                            <a class="btn btn--primary" href="https://github.com/immersalab/AINiagaraFXPlugin" target="_blank">Get Plugin</a>
+                            <a class="btn btn--outline" href="niagaraai-docs.html">Read Docs</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,9 +105,12 @@
         </div>
     </footer>
 <script>
-// Set theme BEFORE scripts load
-const currentTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', currentTheme);
+// Save current theme and force dark mode for NiagaraAI page
+const previousTheme = localStorage.getItem('theme') || 'light';
+if (previousTheme !== 'dark') {
+    localStorage.setItem('previousTheme', previousTheme);
+}
+document.documentElement.setAttribute('data-theme', 'dark');
 </script>
 <script>
 // Theme toggle functionality
@@ -111,11 +119,9 @@ const sunIcon = document.querySelector('.sun-icon');
 const moonIcon = document.querySelector('.moon-icon');
 const html = document.documentElement;
 
-// Update icon visibility based on current theme
-if (currentTheme === 'dark') {
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
-}
+// Set icon to dark mode
+sunIcon.style.display = 'none';
+moonIcon.style.display = 'block';
 
 themeToggle.addEventListener('click', () => {
     const theme = html.getAttribute('data-theme');
