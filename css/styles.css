@@ -666,6 +666,31 @@ a:focus-visible,
   font-weight: 600;
 }
 
+.download-card--coming-soon {
+  position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.download-card__overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.download-card__badge {
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  font-size: 0.75rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Documentation */
 .docs-layout {
   display: grid;
@@ -878,12 +903,64 @@ a:focus-visible,
   text-align: center;
 }
 
+.about-hero .container {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 rgba(0, 0, 0, 0),
+    inset 0 0 0 rgba(255, 255, 255, 0);
+  border: 1px solid var(--color-border);
+  position: relative;
+  transition: box-shadow 0.5s ease, transform 0.5s ease;
+}
+
+.about-hero .container:hover {
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.05),
+    inset 8px 8px 16px rgba(0, 0, 0, 0.15),
+    inset -8px -8px 16px rgba(255, 255, 255, 0.7);
+  transform: scale(0.995);
+}
+
 .about-hero__title {
   margin: 0 0 2rem;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 700;
   line-height: 1.1;
   color: var(--color-text);
+}
+
+.word-immersalab {
+  display: inline-block;
+  position: relative;
+  color: var(--color-text);
+}
+
+.word-immersalab::before {
+  content: 'Immersalab';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+    135deg,
+    #0066ff,
+    #a855f7,
+    #0066ff,
+    #a855f7
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  animation: gradientShift 6s ease infinite;
+}
+
+.about-hero .container:hover .word-immersalab::before {
+  opacity: 1;
 }
 
 .about-hero__lead {
@@ -967,6 +1044,36 @@ a:focus-visible,
 }
 
 /* Dark mode about */
+[data-theme="dark"] .about-hero .container {
+  background: var(--color-surface);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 rgba(0, 0, 0, 0),
+    inset 0 0 0 rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .about-hero .container:hover {
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    inset 8px 8px 20px rgba(0, 0, 0, 0.6),
+    inset -8px -8px 20px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .word-immersalab::before {
+  background: linear-gradient(
+    135deg,
+    #0080ff,
+    #9333ea,
+    #0080ff,
+    #9333ea
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 [data-theme="dark"] .about-card {
   background: var(--color-surface);
   border-color: rgba(255, 255, 255, 0.1);
